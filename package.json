@@ -55,6 +55,8 @@
     "test:watch": "vitest",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "deploy": "vinext-cloudflare deploy --config dist/server/wrangler.json",
-    "deploy:response-store": "wrangler deploy --config wrangler.response-store.jsonc"
+    "deploy:all": "pnpm deploy:response-store && pnpm deploy",
+    "deploy:response-store": "wrangler deploy --config wrangler.response-store.jsonc",
+    "setup:store-bucket": "wrangler r2 bucket create ayudaph-response-store-cache-bodies"
   }
 }

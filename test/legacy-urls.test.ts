@@ -53,6 +53,32 @@ describe("legacy program URLs", () => {
     expect(redirects.some((entry) => entry.source === "/programs/:id")).toBe(false);
   });
 
+  it("sends every www request to the canonical apex host", async () => {
+    const redirects = await loadRedirects();
+    const rule = redirects.find((entry) =>
+      entry.has?.some(
+        (condition) => condition.type === "host" && condition.value === "www.ayudaph.org",
+      ),
+    );
+
+    expect(rule, "a www -> apex host redirect is required").toBeDefined();
+    expect(rule?.destination).toBe("https://ayudaph.org/:path*");
+    expect(rule?.permanent).toBe(true);
+  });
+
+  it("declares the host redirect before the path redirect", async () => {
+    // Next.js applies only the first matching redirect. If the /program/:id
+    // rule came first, a www request under that path would redirect within www
+    // and need a second round trip to reach the apex.
+    const redirects = await loadRedirects();
+    const hostRule = redirects.findIndex((entry) => entry.has !== undefined);
+    const pathRule = redirects.findIndex((entry) => entry.source === "/program/:id");
+
+    expect(hostRule).toBeGreaterThanOrEqual(0);
+    expect(pathRule).toBeGreaterThanOrEqual(0);
+    expect(hostRule).toBeLessThan(pathRule);
+  });
+
   it("locks the public program ids", () => {
     expect(programs.map((program) => program.id).sort()).toEqual(
       [...PUBLIC_PROGRAM_IDS].sort(),

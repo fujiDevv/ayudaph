@@ -103,8 +103,10 @@ The dev server starts on <http://localhost:3000>.
 | `pnpm test`                   | Run the Vitest suite once                                      |
 | `pnpm test:watch`             | Run Vitest in watch mode                                       |
 | `pnpm typecheck`              | Type-check the project without emitting files                  |
-| `pnpm deploy`                 | Build and deploy to Cloudflare Workers                         |
-| `pnpm deploy:response-store`  | Deploy the companion response-store Worker                     |
+| `pnpm deploy`                 | Build and deploy the app Worker                                |
+| `pnpm deploy:all`             | Deploy the response-store Worker, then the app (use this first) |
+| `pnpm deploy:response-store`  | Deploy only the companion response-store Worker                |
+| `pnpm setup:store-bucket`     | One-time: create the response store's R2 bucket                |
 
 ---
 
@@ -257,13 +259,49 @@ the program IDs themselves — renaming an ID silently breaks public URLs.
 
 ## Deployment
 
+This app deploys as **two Workers**:
+
+| Worker | Config | Role |
+| ------------- | -------------------------------- | ---------------------------------------------------------- |
+| `ayudaph` | `wrangler.jsonc` | The Next.js app itself |
+| `ayudaph-response-store` | `wrangler.response-store.jsonc` | R2-backed response cache in front of the app |
+
+The app Worker holds a `RESPONSE_STORE` **service binding** to the cache Worker. Service bindings
+cannot reference a Worker that does not exist, so **the cache Worker must be deployed first** —
+deploying the app alone fails with `code: 10143`.
+
+### First-time setup
+
+Authenticate, then create the cache Worker's R2 bucket. The bucket is *not* created automatically
+by `wrangler deploy`; the store fails to deploy without it.
+
+```bash
+wrangler login
+pnpm setup:store-bucket
+pnpm deploy:all
+```
+
+`pnpm deploy:all` deploys the cache Worker and then the app, in that order. To run the steps
+individually:
+
+```bash
+pnpm deploy:response-store
+pnpm deploy
+```
+
+### Subsequent deploys
+
+Once both Workers exist, the app can be updated on its own:
+
 ```bash
 pnpm deploy
 ```
 
-This builds the app and publishes it to Cloudflare Workers. Before the first deploy, authenticate
-with Wrangler (`wrangler login`) and set `account_id` in `wrangler.jsonc`. The Worker name, asset
-binding, and image bindings are already configured there.
+Re-run `pnpm deploy:all` after changing `wrangler.response-store.jsonc`, or any time the app
+reports a `RESPONSE_STORE` binding error — that means the cache Worker is missing or out of date.
+
+The Worker names, asset binding, and image bindings are already configured in both files; set
+`account_id` there if your Wrangler login is associated with more than one account.
 
 ### Custom domain
 

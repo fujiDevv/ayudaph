@@ -20,6 +20,18 @@
   "cache": {
     "enabled": false
   },
+  // Custom domains are created and DNS records published on deploy. www is
+  // redirected to the apex by the host rule in next.config.ts.
+  "routes": [
+    {
+      "pattern": "ayudaph.org",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.ayudaph.org",
+      "custom_domain": true
+    }
+  ],
   "services": [
     {
       "binding": "RESPONSE_STORE",
