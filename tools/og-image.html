@@ -1,0 +1,170 @@
+<!doctype html>
+<!--
+  Source template for the Open Graph share card (1200x630).
+
+  Do not open this file directly — __LOGO__ is replaced with a data URI at
+  render time. Generate the PNG with:
+
+      node tools/generate-og-image.mjs
+
+  Which writes public/og/og-default.png via headless Chrome.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+      body {
+        font-family: Figtree, -apple-system, "Helvetica Neue", Arial, sans-serif;
+        color: #fff;
+        position: relative;
+        background-color: #003d8f;
+        background-image:
+          radial-gradient(900px 540px at 90% -14%, rgba(255, 255, 255, 0.24), transparent 62%),
+          radial-gradient(760px 520px at 2% 112%, rgba(255, 77, 0, 0.32), transparent 60%),
+          linear-gradient(135deg, #002f75 0%, #0066eb 58%, #0a7bff 100%);
+      }
+      .grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+        background-size: 60px 60px;
+      }
+      .wrap {
+        position: relative;
+        height: 100%;
+        padding: 54px 64px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .brand img {
+        width: 58px;
+        height: 58px;
+        display: block;
+      }
+      .wordmark {
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+      .tagline {
+        margin-top: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.72);
+      }
+      h1 {
+        font-size: 54px;
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        max-width: 950px;
+      }
+      h1 em {
+        font-style: normal;
+        color: #ffc857;
+      }
+      .agencies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 24px;
+        max-width: 980px;
+      }
+      .chip {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+      }
+      .chip.lead {
+        background: #ff4d00;
+        border-color: #ff4d00;
+      }
+      .foot {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+      .url {
+        font-size: 25px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+      .note {
+        font-size: 15px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.82);
+      }
+      .bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 10px;
+        background: linear-gradient(90deg, #ff4d00 0%, #f58900 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid"></div>
+    <div class="wrap">
+      <div class="brand">
+        <img src="__LOGO__" alt="" />
+        <div>
+          <div class="wordmark">Ayuda</div>
+          <div class="tagline">Philippine Government Social Benefits Navigator</div>
+        </div>
+      </div>
+
+      <div>
+        <h1>Find the government benefits <em>you&rsquo;re entitled to.</em></h1>
+        <div class="agencies">
+          <span class="chip lead">20 programs</span>
+          <span class="chip">DSWD</span>
+          <span class="chip">SSS</span>
+          <span class="chip">GSIS</span>
+          <span class="chip">PhilHealth</span>
+          <span class="chip">Pag-IBIG</span>
+          <span class="chip">DOLE</span>
+          <span class="chip">DOH</span>
+          <span class="chip">OWWA</span>
+          <span class="chip">CHED</span>
+          <span class="chip">TESDA</span>
+        </div>
+      </div>
+
+      <div class="foot">
+        <div class="url">ayudaph.org</div>
+        <div class="note">Free &middot; No account &middot; No data collected</div>
+      </div>
+    </div>
+    <div class="bar"></div>
+  </body>
+</html>

@@ -1,0 +1,659 @@
+{
+  "header": {
+    "title": "Ayuda",
+    "subtitle": "Philippine Government Social Benefits Navigator"
+  },
+  "nav": {
+    "directory": "Benefits Directory",
+    "quiz": "Ayuda Finder",
+    "assistance": "Document Prep",
+    "saved": "Saved",
+    "hotlines": "Hotlines",
+    "locator": "Branch Locator",
+    "pathways": "Life Events",
+    "analytics": "Data Analytics",
+    "about": "About Us",
+    "faqs": "FAQs",
+    "sitemap": "Sitemap",
+    "largeText": "Toggle Large Text",
+    "darkMode": "Toggle Dark Mode"
+  },
+  "navbar": {
+    "benefits": "Benefits",
+    "support": "Support",
+    "insights": "Insights",
+    "about": "About",
+    "officialPortal": "Official Gov.ph",
+    "joinUs": "🚀 Contribute",
+    "browseAll": "Browse all benefits"
+  },
+  "locator": {
+    "title": "Agency Branch Locator",
+    "desc": "Find the nearest government agency branches like PhilHealth, Pag-IBIG, SSS, GSIS, DOLE, DOH, OWWA, and DSWD based on your current location.",
+    "filterBy": "Filter by Agency",
+    "allAgencies": "All Agencies",
+    "selectRegion": "Select Region",
+    "selectProvince": "Select Province/City"
+  },
+  "filters": {
+    "title": "Filters",
+    "clearAll": "Clear All",
+    "search": "Search",
+    "searchPlaceholder": "e.g. AICS, Maternity, Loan...",
+    "agency": "Government Agency",
+    "category": "Category",
+    "audience": "Target Audience"
+  },
+  "feed": {
+    "showing": "Showing {count} of {total} benefits",
+    "noMatches": "No matching programs found",
+    "noMatchesDesc": "Try refining your keyword search, selecting broader filter tags, or clearing filters to see all available listings.",
+    "resetFilters": "Reset Filters"
+  },
+  "card": {
+    "bookmark": "Bookmark for later",
+    "removeBookmark": "Remove bookmark",
+    "readiness": "Readiness",
+    "expand": "Expand Checklist & Steps ➔",
+    "hide": "Hide Application Steps & Checklist",
+    "show": "Show Application Steps & Checklist",
+    "requirements": "Document Requirements",
+    "steps": "Application Process",
+    "applyNow": "Apply Now / Learn More"
+  },
+  "finder": {
+    "title": "Ayuda Finder",
+    "subtitle": "Find Your Eligible Benefits",
+    "step": "Step {step} of {total}",
+    "q1": "What is your current employment or life status?",
+    "q2": "What service or aid do you require help with?",
+    "q3": "Select all other tags that describe you (Optional):",
+    "status": {
+      "employed": "Employed (Private Sector/Kasambahay)",
+      "gov": "Government Employee",
+      "unemployed": "Unemployed / Laid off",
+      "student": "Student",
+      "senior": "Senior Citizen (60+)",
+      "ofw": "Overseas Filipino Worker (OFW)"
+    },
+    "needs": {
+      "medical": "Medical & Healthcare (Bills, Medicines, Checkups)",
+      "financial": "Direct Cash & Livelihood (Emergency cash, loans, work)",
+      "housing": "Housing & Home Loans",
+      "education": "Education & Scholarships (Tuition, allowances)"
+    },
+    "demographics": {
+      "indigent": "Low-income / Indigent Family",
+      "crisis": "Experiencing an immediate crisis (death, disaster)",
+      "pregnant": "Pregnant or Expectant Mother",
+      "pwd": "Person with Disability (PWD)"
+    },
+    "recommendations": "Handpicked Recommendations",
+    "noMatchTitle": "No specialized programs matched these combinations.",
+    "noMatchDesc": "Try selecting different options or view all benefits in the Directory.",
+    "viewDetails": "View Details",
+    "back": "Back",
+    "reset": "Reset Quiz"
+  },
+  "detail": {
+    "backToDir": "Back to Directory",
+    "notFoundTitle": "Program Not Found",
+    "notFoundDesc": "The benefit you are looking for does not exist or the link is broken.",
+    "returnHome": "Return Home",
+    "share": "Share this program",
+    "linkCopied": "Link Copied",
+    "processingTime": "Processing Time",
+    "officialPortal": "Official Portal",
+    "visitWebsite": "Visit Agency Website",
+    "prepared": "Prepared",
+    "print": "Print",
+    "contactUs": "Contact Us",
+    "viewDetails": "View Details"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have questions, suggestions, or feedback? Choose how you would like to get in touch with our team:",
+    "reportIssues": "Report an Issue",
+    "reportIssuesDesc": "Found a bug, an outdated rate, or incorrect program data? Open an issue on GitHub.",
+    "sourceCode": "Source Code",
+    "sourceCodeDesc": "Read the full source, review the program dataset, or open a pull request on GitHub.",
+    "website": "Ayudaph.org",
+    "websiteDesc": "Share this site with anyone who needs help finding Philippine government benefits.",
+    "backHome": "Back to Directory"
+  },
+  "wizard": {
+    "title": "Ayuda Finder",
+    "desc": "Answer a few quick questions about your demographics and current situation. Our engine will calculate compatibility scores and recommend the best government programs for you.",
+    "button": "Start Quiz"
+  },
+  "shortlist": {
+    "title": "Your Saved Benefits",
+    "desc": "Review the requirements and steps for the benefits you bookmarked. All checklists and data are saved locally to your device browser.",
+    "noBookmarks": "No bookmarked benefits yet",
+    "noBookmarksDesc": "Browse the Benefits Directory and click the star icon on any program to save it here for offline reference.",
+    "browse": "Browse Directory"
+  },
+  "hotlines": {
+    "title": "Official Agency Directory & Support",
+    "desc": "Direct hotlines, support emails, and inquiry channels for national social benefit providers. Keep these contact points handy when submitting claims.",
+    "noticeTitle": "Important Notice on Inquiries",
+    "noticeDesc": "Official operating times for most government hotlines are Monday to Friday, 8:00 AM to 5:00 PM (Philippine Standard Time), except for Pag-IBIG which operates 24/7. Standard local call rates apply. When contacting, ensure you have your SSS/GSIS/PhilHealth/Pag-IBIG membership ID number ready."
+  },
+  "footer": {
+    "desc": "An independent, open-source navigator for Philippine public welfare programs, created and maintained by Joshua Sarmiento.",
+    "credit": "© 2026 Ayuda — an open-source project by Joshua Sarmiento.",
+    "repo": "GitHub Repository",
+    "navLabel": "Navigation",
+    "resourcesLabel": "Resources",
+    "disclaimerTitle": "Official Disclaimer Notice",
+    "disclaimerDesc": "Ayuda is an independent open-source navigator and is NOT affiliated with, sponsored by, or endorsed by the government of the Philippines or any of its offices (DSWD, SSS, GSIS, PhilHealth, Pag-IBIG, DOLE, DOH, OWWA). Trademarks are property of their respective owners. All guidelines are for informational reference only. Always verify rules, requirements, and deadlines on official government agency portals."
+  },
+  "programs": {
+    "dswd-spisc": {
+      "name": "Social Pension for Indigent Senior Citizens (SPISC)",
+      "description": "A monthly stipend of ₱1,000 (distributed as ₱3,000 quarterly) provided to indigent senior citizens to augment their daily subsistence and medical needs.",
+      "steps": [
+        "Coordinate with the Office for Senior Citizens Affairs (OSCA) in your local government unit.",
+        "Submit the required documents for evaluation.",
+        "Undergo validation by DSWD and LGU social workers using the Community-Based Monitoring System (CBMS) data.",
+        "Once approved, wait for the scheduled quarterly payout announcements."
+      ],
+      "requirements": [
+        "Must be 60 years old and above",
+        "Frail, sickly, or with disability",
+        "No regular source of income or financial support from family",
+        "Not receiving any pension from SSS, GSIS, PVAO, or other government agencies",
+        "Valid Senior Citizen ID"
+      ]
+    },
+    "sss-retirement": {
+      "name": "Retirement Benefit",
+      "description": "A cash benefit paid to an SSS member who can no longer work due to old age, granted either as a lifetime monthly pension or a lump sum amount.",
+      "steps": [
+        "Ensure you have an approved disbursement account in the SSS Disbursement Account Enrollment Module (DAEM).",
+        "Log in to your My.SSS online portal.",
+        "Navigate to E-Services and file the Retirement Claim Application online.",
+        "Upload any required supporting documents (e.g., Certificate of Separation).",
+        "Wait for approval and the initial pension credit to your bank account."
+      ],
+      "requirements": [
+        "Must be at least 60 years old (optional) or 65 years old (technical retirement)",
+        "Must be separated from employment or ceased self-employment (for optional retirement at 60)",
+        "At least 120 monthly contributions prior to the semester of retirement (to qualify for a monthly pension)",
+        "No outstanding SSS salary loan in default",
+        "Retirement Claim Application (SSS Form DDR-1)",
+        "UMID Card or two valid government IDs"
+      ]
+    },
+    "ched-tes": {
+      "name": "Tertiary Education Subsidy (TES)",
+      "description": "A grant-in-aid program that provides financial assistance to qualified Filipino students enrolled in public and private tertiary institutions to help cover educational expenses.",
+      "steps": [
+        "Enroll in an eligible higher education institution (State Universities, Local Universities, or CHED-recognized private HEIs).",
+        "Submit your application and requirements to your school's designated TES Focal Person.",
+        "The school will encode and submit your profile into the UniFAST portal.",
+        "Wait for CHED/UniFAST validation and the official release of the master list of grantees.",
+        "Claim the subsidy disbursement through your school or a partner financial institution."
+      ],
+      "requirements": [
+        "Must be enrolled in a recognized undergraduate program",
+        "Certificate of Registration/Enrollment for the current semester",
+        "Priority is given to students in the DSWD Listahanan (Pantawid Pamilya) or residing in areas without public universities",
+        "Certificate of Indigency (if not included in the Listahanan)",
+        "Must maintain passing grades in academic subjects"
+      ]
+    },
+    "lgu-soloparent": {
+      "name": "Expanded Solo Parents Benefits",
+      "description": "Provides mandated financial and social support to solo parents, including a ₱1,000 monthly subsidy for minimum wage earners, 10% discounts on basic child needs, and paid parental leave.",
+      "steps": [
+        "Visit the Solo Parent Office or City/Municipal Social Welfare and Development Office (C/MSWDO) in your LGU.",
+        "Secure a Barangay Solo Parent Certification from your local barangay desk.",
+        "Attend an orientation regarding your rights and benefits under RA 11861.",
+        "Submit your documentary requirements and undergo an assessment interview with a social worker.",
+        "Once validated, claim your Solo Parent Identification Card (SPIC) and Certificate of Eligibility."
+      ],
+      "requirements": [
+        "Must exclusively exercise sole parental care and support to the child/children without cohabitation",
+        "Birth certificate(s) of dependents (coverage extended up to 22 years old if unmarried, unemployed, and in school)",
+        "Barangay certificate of residency",
+        "Proof of solo parent status (e.g., spouse's death certificate, declaration of nullity of marriage, or medical certificate of spouse's incapacity)",
+        "Income Tax Return or Certificate of Indigency"
+      ]
+    },
+    "dswd-aics": {
+      "name": "AICS (Assistance to Individuals in Crisis Situation)",
+      "description": "Provides immediate medical, burial, educational, transportation, food, or financial assistance to individuals and families experiencing unexpected life crises.",
+      "steps": [
+        "Present required documents at the DSWD Crisis Intervention Unit (CIU) or satellite office.",
+        "Undergo a screening and assessment interview with a DSWD Social Worker.",
+        "Wait for the preparation of the Social Case Study Report or Certificate of Eligibility.",
+        "Receive the cash assistance or Guarantee Letter (GL) for hospital/funeral homes."
+      ],
+      "requirements": [
+        "Valid ID of the applicant (Original and Photocopy)",
+        "Barangay Certificate of Indigency or Residency",
+        "Medical Certificate / Abstract (for medical aid) or Death Certificate (for burial aid)",
+        "Hospital Bill, Laboratory Request, or Funeral Contract",
+        "Referral Letter (if applicable)"
+      ]
+    },
+    "sss-unemp": {
+      "name": "Unemployment Benefit",
+      "description": "A cash benefit granted to covered employees (including OFWs and Kasambahays) who were involuntarily separated from employment due to retrenchment, redundancy, or business closure.",
+      "steps": [
+        "Secure a DOLE Certification of Involuntary Separation.",
+        "Log in to your SSS Member Portal (My.SSS) online.",
+        "Navigate to 'Apply for Unemployment Benefit Claim' under the E-Services tab.",
+        "Fill out the application details and upload the DOLE Certification and valid ID.",
+        "Await approval and direct bank credit to your enrolled bank account."
+      ],
+      "requirements": [
+        "DOLE Certification of Involuntary Separation",
+        "Notice of Termination from Employer OR Notarized Affidavit of Termination",
+        "At least 36 monthly SSS contributions (12 of which must be within the 18-month period prior to separation)",
+        "Enrolled bank account in SSS Disbursement Account Enrollment Module (DAEM)",
+        "Under 60 years old at the time of separation"
+      ]
+    },
+    "philhealth-yakap": {
+      "name": "YAKAP (Yaman ng Kalusugan Program)",
+      "description": "An enhanced primary care benefit package (replacing the former Konsulta Package) providing holistic healthcare including free medical consultations, expanded laboratory and cancer screening tests, and essential medicines.",
+      "steps": [
+        "Ensure your PhilHealth membership is active and register online or via local office.",
+        "Choose and register with a designated PhilHealth YAKAP accredited provider (clinic/hospital).",
+        "Schedule an appointment for free consultations and diagnostic testing.",
+        "Avail of the prescribed medicines at the provider's in-house pharmacy for free."
+      ],
+      "requirements": [
+        "Member Data Record (MDR) copy",
+        "Registration form for PhilHealth YAKAP Provider",
+        "At least 1 valid government ID"
+      ]
+    },
+    "pagibig-mpl": {
+      "name": "Multi-Purpose Loan (MPL)",
+      "description": "A cash loan designed to help active Pag-IBIG members with immediate financial needs, including tuition, medical expenses, home minor repairs, or travel.",
+      "steps": [
+        "Fill out the Pag-IBIG Multi-Purpose Loan Application Form (MPLAF).",
+        "Secure Employer's Declaration section signature.",
+        "Submit online via Virtual Pag-IBIG or at the nearest branch.",
+        "Wait for text notification of approval.",
+        "Claim cash via Pag-IBIG Loyalty Card Plus or cash card."
+      ],
+      "requirements": [
+        "Completed MPL Application Form",
+        "Photocopy of 2 valid government IDs",
+        "Proof of Income (latest 1-month payslip)",
+        "Active Loyalty Card Plus or enrolled LandBank/UCPB cash card",
+        "At least 24 monthly membership contributions"
+      ]
+    },
+    "sss-maternity": {
+      "name": "Maternity Benefit",
+      "description": "A cash benefit paid to female SSS members who gave birth, suffered a miscarriage, or underwent emergency termination of pregnancy.",
+      "steps": [
+        "Submit Maternity Notification (Mat-1) online through My.SSS portal as soon as pregnancy is confirmed.",
+        "After delivery/miscarriage, submit the Maternity Benefit Application (Mat-2) with required documents.",
+        "For employed members: SSS advances payment to the employer, who must pay the employee. SSS reimburses the employer.",
+        "For voluntary/self-employed members: SSS pays directly to the enrolled bank account."
+      ],
+      "requirements": [
+        "Maternity Notification submitted prior to delivery",
+        "Proof of Childbirth (Certified True Copy of Birth Certificate / Certificate of Live Birth)",
+        "At least 3 monthly SSS contributions in the 12-month period immediately preceding the semester of childbirth",
+        "Enrolled bank account (DAEM)",
+        "Medical certificate or ultrasound report (for miscarriages)"
+      ]
+    },
+    "dswd-4ps": {
+      "name": "Pantawid Pamilyang Pilipino Program (4Ps)",
+      "description": "A human development measure that provides conditional cash grants to the poorest households to improve health, nutrition, and education. For 2026, the First 1,000 Days (F1KD) grant for pregnant women and children under two rose from ₱350 to ₱750 per month, on top of health grants (₱750 per household) and education grants of at least ₱300 per child.",
+      "steps": [
+        "Wait for household assessment by DSWD's National Household Targeting System for Poverty Reduction (Listahanan).",
+        "Selected households will undergo community validation.",
+        "Sign the 4Ps Oath of Commitment, pledging compliance with health and education conditions.",
+        "Receive LandBank cash cards for monthly/bi-monthly cash grant payouts."
+      ],
+      "requirements": [
+        "DSWD Listahanan poor classification (must be targeted)",
+        "Pregnant women must receive pre- and post-natal care",
+        "Children 0-5 years old must receive regular checkups and vaccines",
+        "Children 3-18 years old must be enrolled in school with 85% attendance",
+        "Parents must attend monthly Family Development Sessions (FDS)"
+      ]
+    },
+    "dole-tupad": {
+      "name": "TUPAD (Emergency Employment)",
+      "description": "A community-based package of assistance that provides emergency employment for displaced workers, underemployed, and seasonal workers, for a minimum period of 10 days up to 90 days in exceptional cases.",
+      "steps": [
+        "Visit the nearest DOLE Regional/Field Office or local PESO (Public Employment Service Office) in your LGU.",
+        "Submit application and profile sheet for evaluation.",
+        "Attend the orientation on safety and health at work.",
+        "Perform assigned community work (e.g. street cleaning, minor repairs, tree planting) for 10-90 days.",
+        "Claim salary payout via money remittance centers upon submission of daily time record."
+      ],
+      "requirements": [
+        "TUPAD Application Profile Sheet",
+        "1 valid ID",
+        "Indigency Certificate from the Barangay",
+        "Must be at least 18 years old",
+        "Must not be an active government employee"
+      ]
+    },
+    "doh-maip": {
+      "name": "Medical Assistance to Indigent Patients (MAIP)",
+      "description": "DOH program providing financial support through guarantee letters to cover medical expenses (hospitalization, laboratory tests, drugs, medicines) in government and select private hospitals.",
+      "steps": [
+        "Visit the Malasakit Center or Medical Social Service unit inside a participating government hospital.",
+        "Present requirements to the officer for social welfare evaluation.",
+        "Sign the assessment sheet.",
+        "Receive the Guarantee Letter (GL) which will be deducted directly from your hospital billing."
+      ],
+      "requirements": [
+        "Medical Certificate or Clinical Summary",
+        "Certificate of Indigency from Barangay or DSWD Social Case Study",
+        "Hospital Bill or Laboratory/Diagnostic Request",
+        "Doctor's Prescription with price estimation",
+        "Valid ID of patient or immediate relative representative"
+      ]
+    },
+    "pagibig-housing": {
+      "name": "Regular Housing Loan",
+      "description": "Provides financing up to ₱6 Million for purchasing residential lots, house and lot packages, condominiums, or construction/renovation of homes, payable up to 30 years.",
+      "steps": [
+        "Submit Housing Loan Application Form and initial documents online or at a Pag-IBIG hub.",
+        "Pay the non-refundable ₱1,000 processing fee.",
+        "Receive Notice of Approval (NOA) and Letter of Guaranty (LOG).",
+        "Complete post-approval requirements (e.g. transfer of title, tax declaration) within 90 days.",
+        "Receive loan proceeds check or bank transfer."
+      ],
+      "requirements": [
+        "At least 24 monthly contributions (consecutive or lump sum)",
+        "Completed Housing Loan Application Form with photos",
+        "Proof of Income (Payslip / Income Tax Return / Job Contract for OFWs)",
+        "Transfer Certificate of Title (TCT) copy of property",
+        "Tax Declaration and Real Estate Tax Receipt",
+        "No outstanding Pag-IBIG loans in default"
+      ]
+    },
+    "gsis-retirement": {
+      "name": "Retirement Benefit",
+      "description": "Ensures active GSIS members receive pensions (either as a lump-sum check + monthly annuity, or immediately as monthly pension) upon retiring from government service.",
+      "steps": [
+        "Submit application online through the GSIS Touch mobile app or at a GSIS wireless kiosk (GW@PS).",
+        "Submit physical copies of service records and clearances to your agency's Human Resources officer.",
+        "Receive notification from GSIS on calculation of pension benefits.",
+        "Pension is credited directly to your GSIS eCard (UMID) account."
+      ],
+      "requirements": [
+        "Completed Application Form for Retirement Benefit",
+        "Declaration of Pendency/Non-Pendency of Case form",
+        "Service Record from the government agency",
+        "At least 15 years of government service",
+        "Must be at least 60 years old at retirement"
+      ]
+    },
+    "owwa-edsp": {
+      "name": "Education for Development Scholarship Program (EDSP)",
+      "description": "A scholarship grant of up to ₱60,000 per school year for qualified dependents of active OFW members, who intend to enroll in a 4- to 5-year baccalaureate course.",
+      "steps": [
+        "Apply online through the OWWA Scholarship portal during the application window.",
+        "Upload scholastic records and proof of active OFW membership.",
+        "Take the qualifying examination administered by DOST-SEI.",
+        "Once selected, attend the scholarship orientation and sign the Scholarship Agreement.",
+        "Claim tuition and allowance disbursements every semester."
+      ],
+      "requirements": [
+        "Child of active OFW, or sibling of unmarried OFW",
+        "Grade 12 student with General Weighted Average of at least 85%",
+        "Proof of active SSS/OWWA membership of OFW parent/sibling",
+        "Birth Certificate of student (and OFW if sibling relation)",
+        "Certificate of Good Moral Character"
+      ]
+    },
+    "sss-sickness": {
+      "name": "Sickness Benefit",
+      "description": "A daily cash allowance paid for the number of days a member is unable to work due to sickness or injury, confined either in a hospital or at home for at least 4 days.",
+      "steps": [
+        "If employed: Notify your employer within 5 days of sickness onset. The employer will submit the claim to SSS.",
+        "If self-employed/voluntary: File the SSS Sickness Benefit Application online via My.SSS portal within 14 days of sickness onset.",
+        "Submit medical certificates and laboratory results for review by the SSS Medical Evaluation Department.",
+        "Receive daily cash reimbursement in your enrolled bank account (or via your employer)."
+      ],
+      "requirements": [
+        "Completed Sickness Benefit Application online",
+        "Medical Certificate (Form MM-1) signed by attending physician",
+        "At least 3 monthly SSS contributions in the 12-month period immediately preceding the semester of sickness",
+        "Laboratory/diagnostic results supporting the diagnosis",
+        "Enrolled bank account (DAEM)"
+      ]
+    },
+    "philhealth-newborn": {
+      "name": "Newborn Care Package",
+      "description": "Provides essential health services for newborns including physical examination, eye prophylaxis, vitamin K administration, BCG vaccine, first dose of hepatitis B vaccine, and newborn screening test.",
+      "steps": [
+        "Ensure active PhilHealth membership prior to delivery.",
+        "Submit copy of Member Data Record (MDR) and valid ID to the billing section of the hospital.",
+        "Fill out PhilHealth Claim Form 1 (CF-1) and Claim Form 2 (CF-2) at the hospital.",
+        "The Newborn Care Package is automatically deducted from the hospital billing for both mother and child."
+      ],
+      "requirements": [
+        "Active PhilHealth membership or dependent registration",
+        "Completed PhilHealth Claim Form 1 (CF1)",
+        "Completed PhilHealth Claim Form 2 (CF2)",
+        "Member Data Record (MDR) copy",
+        "Valid government ID of the member parent"
+      ]
+    },
+    "sss-funeral": {
+      "name": "Funeral Benefit",
+      "description": "A cash benefit ranging from a fixed ₱12,000 (for 1-35 contributions) up to a variable ₱20,000 to ₱60,000 (for 36+ contributions) granted to whoever paid the funeral expenses of a deceased SSS member.",
+      "steps": [
+        "Secure a Certified True Copy of the Death Certificate from the local civil registry or PSA.",
+        "Gather official receipt from the funeral parlor showing the claimant's name as payor.",
+        "Log in to My.SSS Portal (E-Services tab) and select 'Apply for Funeral Benefit Claim'.",
+        "Fill out the online application and upload the Death Certificate, Funeral Receipt, and claimant ID.",
+        "Wait for approval and direct credit to the enrolled claimant bank account."
+      ],
+      "requirements": [
+        "Death Certificate of the deceased member (PSA copy or Certified True Copy)",
+        "Official Receipt of funeral expenses naming the claimant as payor",
+        "Valid ID of the claimant (Original and Photocopy)",
+        "Disbursement Account enrollment (DAEM) of claimant",
+        "Proof of contributions of the deceased member (at least 1 contribution)"
+      ]
+    },
+    "gsis-funeral": {
+      "name": "Funeral Benefit",
+      "description": "A cash benefit of ₱30,000 paid to the surviving spouse, children, or whoever paid the funeral expenses of a deceased GSIS member or retiree.",
+      "steps": [
+        "Download and fill out the GSIS Application Form for Funeral Benefit.",
+        "Obtain a certified photocopy of the Death Certificate.",
+        "Submit application via GSIS Wireless Kiosk (GW@PS), GSIS Touch app, or email to the regional branch.",
+        "Submit official receipt of funeral expenses if the claimant is not the surviving spouse.",
+        "Wait for credit to the claimant's eCard or bank account."
+      ],
+      "requirements": [
+        "Completed GSIS Funeral Benefit Application Form",
+        "Death Certificate of the deceased GSIS member (PSA or Certified Local Copy)",
+        "Marriage Contract (PSA copy) if surviving spouse is claimant",
+        "Official Receipt of funeral expenses if claimant is not the spouse",
+        "Valid ID of the claimant"
+      ]
+    },
+    "tesda-training": {
+      "name": "Free Skills Training & Scholarship",
+      "description": "Provides free vocational training, assessment, and entrepreneurship toolkits under programs like TWSP, STEP, and PESFA to help citizens find new employment.",
+      "steps": [
+        "Search for available training courses at local TESDA-accredited schools or field offices.",
+        "Submit application forms along with required academic and demographic papers.",
+        "Attend the screening or selection interview at the training center.",
+        "Complete the designated classroom training hours and practical application.",
+        "Take the National Assessment to receive the National Certificate (NC I or NC II) and toolkit/allowance."
+      ],
+      "requirements": [
+        "Completed TESDA Enrollment Form",
+        "Barangay Clearance or Certificate of Indigency",
+        "At least High School Graduate report card or ALS Certificate",
+        "Form 137 or Transcript of Records",
+        "4 copies of passport size photos (white background, collar, with name tag)"
+      ]
+    }
+  },
+  "hero": {
+    "title": "Explore Philippine Welfare & Benefits",
+    "desc": "Search, filter, and track requirements for national assistance schemes. Bookmark programs to save your document checklists offline."
+  },
+  "assistance": {
+    "title": "Application Assistance & Templates",
+    "desc": "Draft formal request letters, affidavits, or authorization letters instantly, and follow our step-by-step guides to obtain local prerequisite certificates.",
+    "tabGenerator": "Document Generator",
+    "tabGuides": "Prerequisite Guides",
+    "formTitle": "Document Details",
+    "previewTitle": "Document Preview",
+    "downloadPdf": "Download PDF",
+    "print": "Print Document",
+    "docType": "Document Type",
+    "selectDoc": "Select a template...",
+    "authLetter": "Authorization Letter",
+    "affidavitLowIncome": "Affidavit of Low Income",
+    "requestLetter": "Request Letter (Liham Kahilingan)",
+    "date": "Date",
+    "applicantName": "Applicant Full Name",
+    "applicantAddress": "Applicant Address",
+    "repName": "Representative Full Name",
+    "repAddress": "Representative Address",
+    "relationship": "Relationship to Representative",
+    "purpose": "Purpose of Request (e.g. claim cash aid)",
+    "monthlyIncome": "Stated Monthly Income (e.g. ₱5,000 / No Fixed Income)",
+    "livelihood": "Source of Livelihood / Occupation",
+    "dependents": "Number of Dependents",
+    "recipient": "Recipient (e.g. Hon. Mayor Juan dela Cruz)",
+    "office": "Office / Agency Name",
+    "officeAddress": "Office Address",
+    "patientName": "Patient's Full Name (if medical/burial)",
+    "explanation": "Brief explanation of family situation",
+    "notaryText": "Subscribed and sworn to before me this ___ day of ________, 20__.",
+    "guideTitle": "Prerequisite Certificate Guides",
+    "guideDesc": "Almost 90% of government social programs require these foundational papers. Learn how to secure them efficiently.",
+    "selectGuide": "Choose Prerequisite Document",
+    "barangayIndigency": "Barangay Certificate of Indigency",
+    "birNoIncome": "BIR Certificate of No Income",
+    "whereToGet": "Where to Request",
+    "requirements": "Prerequisites & Requirements",
+    "fees": "Fees",
+    "timeline": "Estimated Timeline",
+    "steps": "Step-by-Step Procedure",
+    "tips": "Pro-Tips for Applicants",
+    "saveProgress": "Check off items as you complete them to save your progress locally.",
+    "complete": "Completed",
+    "incomplete": "Incomplete",
+    "progress": "Preparation Progress"
+  },
+  "pathways": {
+    "title": "Life Event Pathways",
+    "desc": "Select a major life milestone to view, manage, and check off required government document packages and application steps in a structured timeline.",
+    "babyTitle": "Having a Baby",
+    "babyDesc": "Claim maternity cash benefits, newborn medical packages, and register your child's birth certificate.",
+    "babyTips": "Notify your employer or SSS immediately after pregnancy is confirmed. Make sure your PhilHealth contributions are updated prior to delivery to qualify for newborn care packages.",
+    "deathTitle": "Loss of a Family Member",
+    "deathDesc": "Secure death certificates, claim SSS/GSIS funeral benefits, and manage initial bereavement claims.",
+    "deathTips": "Ensure the official funeral receipts name you as the payor, as claims are reimbursed to the specific person who paid the expenses. Keep copies of both local and PSA-certified death certificates.",
+    "jobLossTitle": "Job Loss / Transition",
+    "jobLossDesc": "Apply for SSS unemployment benefits, register for free TESDA skill training, and find immediate local emergency work.",
+    "jobLossTips": "File for your DOLE separation certificate within 60 days of involuntary termination. Check if your SSS account has at least 36 monthly contributions registered to secure unemployment payouts.",
+    "retirementTitle": "Retirement & Senior Care",
+    "retirementDesc": "Transition into retirement by securing SSS/GSIS pensions, claiming indigent senior support, and managing elderly benefits.",
+    "retirementTips": "Submit your retirement application within the month of your birthday or retirement date to avoid delays. Ensure your UMID card is active and linked to your bank account.",
+    "studentTitle": "Entering College & Training",
+    "studentDesc": "Secure tertiary education subsidies, apply for active scholarship funds, and enroll in vocational training courses.",
+    "studentTips": "Check the UniFAST portal regularly for school eligibility. Keep your GPA/grades above the school threshold to maintain status for subsidies.",
+    "familyTitle": "Solo Parents & Family Care",
+    "familyDesc": "Access expanded solo parent discounts, monthly LGU subsidies, and primary family healthcare benefits.",
+    "familyTips": "Renew your Solo Parent ID yearly at your LGU social welfare office to keep receiving discounts and subsidies.",
+    "selectEvent": "Select another Life Event",
+    "progress": "Overall Pathway Progress",
+    "coordinationTips": "Expert Guidance & Checklist Instructions",
+    "bundleIncludes": "This pathway bundles the following government programs:"
+  },
+  "analytics": {
+    "title": "Data Analytics",
+    "subtitle": "A comprehensive overview of the social assistance landscape in the Philippines across 20 distinct programs.",
+    "executiveSummary": "Executive Summary",
+    "takeaway1Title": "Leading Agencies",
+    "takeaway1Desc": "The Social Security System (SSS) and the Department of Social Welfare and Development (DSWD) are the most active agencies, providing a combined total of 8 programs. SSS focuses heavily on member-based benefits (Retirement, Sickness, Maternity), while DSWD manages broad social safety nets like 4Ps and AICS.",
+    "takeaway2Title": "Core Assistance Types",
+    "takeaway2Desc": "Financial assistance is the primary service offered, appearing in 6 different programs. This is closely followed by Education (4 programs) and Cash Allowances/Pensions (3 programs each), indicating a strong focus on direct economic support and human capital development.",
+    "takeaway3Title": "Vulnerable Groups",
+    "takeaway3Desc": "The programs are specifically designed to support Indigent and Low-Income individuals, as well as specific demographics such as Seniors, Students, and Retirees.",
+    "kpiTotalPrograms": "Total Programs",
+    "kpiAgencies": "Government Agencies",
+    "kpiCategories": "Subcategories",
+    "kpiAvgRequirements": "Avg. Documents Needed",
+    "kpiAvgSteps": "Avg. Application Steps",
+    "kpiActiveBookmarks": "Bookmarked Programs",
+    "chartAgenciesTitle": "Number of Ayuda Programs by Agency",
+    "chartCategoriesTitle": "Number of Ayuda Programs by Category",
+    "chartAudiencesTitle": "Top 15 Target Audiences for Ayuda Programs",
+    "chartTagsTitle": "Top 15 Program Tags",
+    "chartTooltipPrograms": "Programs",
+    "chartTooltipPercentage": "Percentage",
+    "viewAll": "View all related programs",
+    "agencyFilterLabel": "Filter by Agency",
+    "categoryFilterLabel": "Filter by Category"
+  },
+  "about": {
+    "title": "About Ayuda",
+    "subtitle": "Empowering Filipinos with clear, accessible, and simplified information about government social benefits.",
+    "missionTitle": "Our Mission",
+    "missionDesc": "Navigating public assistance can be overwhelming. Ayuda was created to bridge the gap between citizens and social safety nets by organizing complex government guidelines into readable, step-by-step checklists.",
+    "valuesTitle": "Core Values",
+    "values": {
+      "transparency": "Radical Transparency",
+      "transparencyDesc": "All source code and data sheets are open-source. Anyone can verify, audit, and improve how eligibility is calculated.",
+      "privacy": "Privacy-First",
+      "privacyDesc": "No personal data is sent to external servers. Your responses, bookmark checklists, and documents remain 100% inside your local browser storage.",
+      "accessibility": "Designed for Everyone",
+      "accessibilityDesc": "Optimized for speed, low bandwidth, readability customization (Large Text Mode), and screen readers."
+    },
+    "initiativeTitle": "A Citizen Initiative",
+    "initiativeDesc": "Ayuda is an independent project created and maintained by Joshua Sarmiento, born out of a personal goal to make government aid easier to navigate for everyday Filipinos. The interface follows the design language of <a href=\"https://bettergov.ph\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"font-bold text-blue-600 dark:text-blue-400 hover:underline\">BetterGov.ph</a>, a civic tech community working to modernize how citizens interact with public services. We believe that digital public infrastructure should be open, accessible, and built around real user needs.",
+    "openSourceTitle": "Open for Contributions",
+    "openSourceDesc": "Help us update correct rates, add local government aids, or improve the UI. Together we can build a better government navigator.",
+    "contribButton": "Contribute on GitHub"
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Got questions about Ayuda? We have answers to help you navigate our platform and learn how it works.",
+    "searchPlaceholder": "Search FAQs...",
+    "noResults": "No FAQs match your search.",
+    "catAll": "All Questions",
+    "catGeneral": "General Information",
+    "catPrivacy": "Privacy & Data",
+    "catData": "Data & Updates",
+    "catContrib": "Contributions",
+    "q1": "Is Ayuda affiliated with the Philippine government?",
+    "a1": "No. Ayuda is a 100% independent, open-source project created and maintained by Joshua Sarmiento. It follows the design language of BetterGov.ph, but is not affiliated with, sponsored by, or endorsed by the government of the Philippines or any of its agencies.",
+    "q2": "Is using Ayuda free?",
+    "a2": "Yes, completely free. There are no fees, ads, or premium subscriptions. The project is built purely as a public utility to help Filipinos discover social assistance programs.",
+    "q3": "Does Ayuda collect or store my personal information?",
+    "a3": "No. Ayuda is built with a privacy-first architecture. Any answers you submit in the Ayuda Finder (quiz), the documents you draft in the Document Generator, or the programs you bookmark are stored solely on your local device browser via LocalStorage. No data is sent to our servers.",
+    "q4": "Where does the benefit program data come from?",
+    "a4": "All program details, guidelines, requirements, and steps are compiled from official government public sources, such as citizen charters, agency portals (SSS, GSIS, DSWD, etc.), and official news releases.",
+    "q5": "How often is the benefits directory updated?",
+    "a5": "We monitor changes regularly and update the directory through community contributions. However, government guidelines can change without notice. We highly recommend cross-checking requirements on official portals using the links provided on the benefit details pages.",
+    "q6": "How can I report a correction or request a new benefit to be added?",
+    "a6": "You can suggest corrections or propose new programs by opening an issue or submitting a pull request on our GitHub repository, or by reaching out to us through our contact page."
+  },
+  "sitemap": {
+    "title": "Sitemap",
+    "subtitle": "Use our sitemap to quickly find and access any page or tool within the Ayuda platform.",
+    "coreTools": "Core Tools & Directories",
+    "coreToolsDesc": "Our main tools to search, filter, match, and organize government benefits.",
+    "resources": "Resources & Contacts",
+    "resourcesDesc": "Official agency hotlines, physical branch locators, and templates.",
+    "meta": "About & Project Info",
+    "metaDesc": "Learn more about the initiative, project team, FAQs, and contact forms."
+  }
+}

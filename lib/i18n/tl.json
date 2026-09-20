@@ -1,0 +1,659 @@
+{
+  "header": {
+    "title": "Ayuda",
+    "subtitle": "Gabay sa mga Benepisyo at Sosyal na Programa ng Pilipinas"
+  },
+  "nav": {
+    "directory": "Direktoryo",
+    "quiz": "Hanapin ang Ayuda",
+    "assistance": "Dokumento",
+    "saved": "Naka-save",
+    "hotlines": "Hotlines",
+    "locator": "Locator ng Sangay",
+    "pathways": "Yugto ng Buhay",
+    "analytics": "Pagsusuri ng Data",
+    "about": "Tungkol sa Amin",
+    "faqs": "Mga FAQ",
+    "sitemap": "Sitemap",
+    "largeText": "Baguhin ang Laki ng Teksto",
+    "darkMode": "Baguhin ang Dark Mode"
+  },
+  "navbar": {
+    "benefits": "Mga Benepisyo",
+    "support": "Suporta",
+    "insights": "Impormasyon",
+    "about": "Tungkol",
+    "officialPortal": "Opisyal na Gov.ph",
+    "joinUs": "🚀 Makibahagi",
+    "browseAll": "Tingnan lahat ng benepisyo"
+  },
+  "locator": {
+    "title": "Locator ng Sangay ng Ahensya",
+    "desc": "Hanapin ang pinakamalapit na sangay ng ahensya ng gobyerno tulad ng PhilHealth, Pag-IBIG, SSS, GSIS, DOLE, DOH, OWWA, at DSWD base sa iyong lokasyon.",
+    "filterBy": "I-filter ayon sa Ahensya",
+    "allAgencies": "Lahat ng Ahensya",
+    "selectRegion": "Pumili ng Rehiyon",
+    "selectProvince": "Pumili ng Probinsya/Siyudad"
+  },
+  "filters": {
+    "title": "Mga Filter",
+    "clearAll": "Alisin Lahat",
+    "search": "Hanapin",
+    "searchPlaceholder": "hal. AICS, Maternity, Loan...",
+    "agency": "Ahensya ng Gobyerno",
+    "category": "Kategorya",
+    "audience": "Para Kanino"
+  },
+  "feed": {
+    "showing": "Nagpapakita ng {count} mula sa {total} na benepisyo",
+    "noMatches": "Walang nahanap na programa",
+    "noMatchesDesc": "Subukang palitan ang iyong paghahanap, pumili ng ibang filter, o alisin ang mga filter upang makita ang lahat ng listahan.",
+    "resetFilters": "I-reset ang mga Filter"
+  },
+  "card": {
+    "bookmark": "I-save para sa mamaya",
+    "removeBookmark": "Alisin sa naka-save",
+    "readiness": "Kahandaan",
+    "expand": "Tingnan ang Checklist at Hakbang ➔",
+    "hide": "Itago ang Mga Hakbang at Checklist",
+    "show": "Ipakita ang Mga Hakbang at Checklist",
+    "requirements": "Mga Dokumentong Kailangan",
+    "steps": "Proseso ng Aplikasyon",
+    "applyNow": "Mag-apply Ngayon / Alamin ang Iba Pa"
+  },
+  "finder": {
+    "title": "Ayuda Finder",
+    "subtitle": "Hanapin ang mga Benepisyong Nararapat Sayo",
+    "step": "Hakbang {step} ng {total}",
+    "q1": "Ano ang iyong kasalukuyang katayuan sa trabaho o buhay?",
+    "q2": "Anong serbisyo o tulong ang kailangan mo?",
+    "q3": "Piliin ang iba pang mga tags na naglalarawan sa iyo (Opsiyonal):",
+    "status": {
+      "employed": "May Trabaho (Pribadong Sektor/Kasambahay)",
+      "gov": "Empleyado ng Gobyerno",
+      "unemployed": "Walang Trabaho / Natanggal sa trabaho",
+      "student": "Estudyante",
+      "senior": "Senior Citizen (60+)",
+      "ofw": "Overseas Filipino Worker (OFW)"
+    },
+    "needs": {
+      "medical": "Medikal at Kalusugan (Bills, Gamot, Checkups)",
+      "financial": "Direktang Pera at Kabuhayan (Emergency cash, utang, trabaho)",
+      "housing": "Pabahay at Home Loans",
+      "education": "Edukasyon at Scholarship (Tuition, allowances)"
+    },
+    "demographics": {
+      "indigent": "Mababang kita / Indigent na Pamilya",
+      "crisis": "Kasalukuyang nakakaranas ng krisis (kamatayan, sakuna)",
+      "pregnant": "Buntis o Inaasahang Ina",
+      "pwd": "Person with Disability (PWD)"
+    },
+    "recommendations": "Mga Inirerekomendang Programa",
+    "noMatchTitle": "Walang partikular na programa ang tumugma sa mga napili.",
+    "noMatchDesc": "Subukang pumili ng ibang opsyon o tingnan ang lahat ng benepisyo sa Direktoryo.",
+    "viewDetails": "Tingnan ang Detalye",
+    "back": "Bumalik",
+    "reset": "Ulitin ang Pagsusulit"
+  },
+  "detail": {
+    "backToDir": "Bumalik sa Direktoryo",
+    "notFoundTitle": "Hindi Nahanap ang Programa",
+    "notFoundDesc": "Ang benepisyong hinahanap mo ay hindi umiiral o sira ang link.",
+    "returnHome": "Bumalik sa Home",
+    "share": "Ibahagi ang programang ito",
+    "linkCopied": "Nakopya ang Link",
+    "processingTime": "Oras ng Pagproseso",
+    "officialPortal": "Opisyal na Portal",
+    "visitWebsite": "Bisitahin ang Website",
+    "prepared": "Nakahanda",
+    "print": "I-print",
+    "contactUs": "Kontakin Kami",
+    "viewDetails": "Tingnan ang Detalye"
+  },
+  "contact": {
+    "title": "Kontakin Kami",
+    "subtitle": "May mga katanungan, mungkahi, o feedback? Pumili kung paano mo gustong makipag-ugnayan sa aming team:",
+    "reportIssues": "Iulat ang Isyu",
+    "reportIssuesDesc": "May nakitang bug, lumang rate, o maling impormasyon sa programa? Magbukas ng isyu sa GitHub.",
+    "sourceCode": "Source Code",
+    "sourceCodeDesc": "Basahin ang buong source, suriin ang dataset ng mga programa, o magsumite ng pull request sa GitHub.",
+    "website": "Ayudaph.org",
+    "websiteDesc": "Ibahagi ang site na ito sa mga nangangailangan ng tulong sa paghahanap ng benepisyo ng gobyerno.",
+    "backHome": "Bumalik sa Direktoryo"
+  },
+  "wizard": {
+    "title": "Ayuda Finder",
+    "desc": "Sagutan ang ilang mabilis na tanong tungkol sa iyong sitwasyon. Kakalkulahin ng aming system ang iyong compatibility at magrerekomenda ng mga pinakamahusay na programa ng gobyerno para sa iyo.",
+    "button": "Simulan ang Pagsusuri"
+  },
+  "shortlist": {
+    "title": "Iyong Mga Nai-save na Benepisyo",
+    "desc": "Suriin ang mga kinakailangan at hakbang para sa mga benepisyong iyong nai-save. Lahat ng data ay naka-imbak nang lokal sa iyong browser.",
+    "noBookmarks": "Wala pang nai-save na benepisyo",
+    "noBookmarksDesc": "Maghanap sa Listahan ng Benepisyo at i-click ang star icon sa anumang programa upang i-save ito para mabasa kahit walang internet.",
+    "browse": "Tingnan ang Listahan"
+  },
+  "hotlines": {
+    "title": "Opisyal na Direktoryo at Suporta ng mga Ahensya",
+    "desc": "Mga direktang hotline, email, at channel ng pagtatanong para sa mga tagapagbigay ng benepisyo. Itabi ang mga kontact na ito kapag nag-a-apply ng claim.",
+    "noticeTitle": "Mahalagang Paunawa sa Pagtatanong",
+    "noticeDesc": "Ang opisyal na oras ng operasyon para sa karamihan ng hotline ng gobyerno ay Lunes hanggang Biyernes, 8:00 AM hanggang 5:00 PM (Philippine Standard Time), maliban sa Pag-IBIG na bukas 24/7. Siguraduhing handa ang iyong SSS/GSIS/PhilHealth/Pag-IBIG ID number kapag tatawag."
+  },
+  "footer": {
+    "desc": "Isang independyente at open-source na gabay para sa mga programa ng pamahalaan sa Pilipinas, na ginawa at pinapanatili ni Joshua Sarmiento.",
+    "credit": "© 2026 Ayuda — isang open-source na proyekto ni Joshua Sarmiento.",
+    "repo": "GitHub Repository",
+    "navLabel": "Nabigasyon",
+    "resourcesLabel": "Mga Mapagkukunan",
+    "disclaimerTitle": "Opisyal na Paunawa ng Pagtanggi (Disclaimer)",
+    "disclaimerDesc": "Ang Ayuda ay isang independiyenteng gabay at HINDI konektado, itinataguyod, o pinondohan ng gobyerno ng Pilipinas o alinman sa mga opisina nito. Ang mga trademark ay pag-aari ng kani-kanilang may-ari. Palaging kumpirmahin ang mga patakaran sa opisyal na website ng mga ahensya ng gobyerno."
+  },
+  "programs": {
+    "dswd-spisc": {
+      "name": "Sosyal na Pension para sa mga Mahihirap na Senior Citizen (Social Pension for Indigent Senior Citizens)",
+      "description": "Isang buwanang allowance na ₱1,000 (ipinamamahagi bilang ₱3,000 quarterly) na ibinibigay sa mga mahihirap na senior citizen upang madagdagan ang kailangang pang-araw-araw na pagkain at medikal na gastusin.",
+      "steps": [
+        "Makipag-ugnayan sa Office for Senior Citizens Affairs (OSCA) sa inyong lokal na pamahalaan (LGU).",
+        "Isumite ang mga kinakailangang dokumento para sa pagsusuri.",
+        "Sumailalim sa validation ng mga social worker ng DSWD at LGU gamit ang data ng Community-Based Monitoring System (CBMS).",
+        "Kapag naaprubahan, maghintay para sa anunsyo ng nakaiskedyul na quarterly na payout."
+      ],
+      "requirements": [
+        "Dapat ay 60 taong gulang pataas",
+        "Mahina, may sakit, o may kapansanan",
+        "Walang regular na pinagkukunan ng kita o pinansyal na suporta mula sa pamilya",
+        "Hindi tumatanggap ng anumang pension mula sa SSS, GSIS, PVAO, o iba pang ahensya ng gobyerno",
+        "Valid na Senior Citizen ID"
+      ]
+    },
+    "sss-retirement": {
+      "name": "Benepisyo sa Pagreretiro (Retirement Benefit)",
+      "description": "Isang benepisyong cash na ibinibigay sa miyembro ng SSS na hindi na makapagtrabaho dahil sa katandaan, na ipinagkakaloob bilang panghabambuhay na buwanang pension o lump sum.",
+      "steps": [
+        "Tiyaking mayroon kang naaprubahang bank account sa SSS Disbursement Account Enrollment Module (DAEM).",
+        "Mag-log in sa iyong My.SSS online portal.",
+        "Pumunta sa E-Services at i-file ang Retirement Claim Application online.",
+        "I-upload ang anumang kinakailangang sumusuportang dokumento (hal. Certificate of Separation).",
+        "Maghintay ng pag-apruba at ng unang pension sa inyong bank account."
+      ],
+      "requirements": [
+        "Dapat ay hindi bababa sa 60 taong gulang (opsyonal) o 65 taong gulang (teknikal na pagreretiro)",
+        "Dapat ay hiwalay na sa trabaho o huminto na sa self-employment (para sa opsyonal na pagreretiro sa edad na 60)",
+        "Hindi bababa sa 120 buwanang kontribusyon bago ang semestre ng pagreretiro (upang maging kwalipikado para sa buwanang pension)",
+        "Walang hindi nababayarang SSS salary loan na nasa default",
+        "Retirement Claim Application (SSS Form DDR-1)",
+        "UMID Card o dalawang valid government ID"
+      ]
+    },
+    "ched-tes": {
+      "name": "Subsidy sa Tersyaryong Edukasyon (Tertiary Education Subsidy - TES)",
+      "description": "Isang programa ng tulong-pinansyal na nagbibigay ng suporta sa mga kwalipikadong estudyanteng Pilipino na naka-enroll sa mga pampubliko at pribadong kolehiyo upang makatalong sa mga gastusin sa edukasyon.",
+      "steps": [
+        "Mag-enroll sa isang kwalipikadong higher education institution (State Universities, Local Universities, o mga pribadong HEI na kinikilala ng CHED).",
+        "Isumite ang iyong aplikasyon at mga kinakailangan sa itinalagang TES Focal Person ng inyong paaralan.",
+        "Ie-encode at isusumite ng paaralan ang iyong profile sa UniFAST portal.",
+        "Maghintay para sa validation ng CHED/UniFAST at sa opisyal na pagpapalabas ng listahan ng mga iskolar (master list of grantees).",
+        "Kunin ang subsidy disbursement sa pamamagitan ng inyong paaralan o partner na institusyong pinansyal."
+      ],
+      "requirements": [
+        "Dapat ay naka-enroll sa isang kinikilalang undergraduate program",
+        "Sertipiko ng Rehistrasyon/Enrollment para sa kasalukuyang semestre",
+        "Priyoridad ang mga mag-aaral na nasa DSWD Listahanan (Pantawid Pamilya) o nakatira sa mga lugar na walang pampublikong unibersidad",
+        "Certificate of Indigency (kung hindi kasama sa Listahanan)",
+        "Dapat mapanatili ang mga pasadong marka sa mga asignaturang akademiko"
+      ]
+    },
+    "lgu-soloparent": {
+      "name": "Pinalawak na mga Benepisyo para sa Solo Parent (Expanded Solo Parents Benefits)",
+      "description": "Nagbibigay ng ipinag-uutos na pinansyal at panlipunang suporta sa mga solo parent, kabilang ang ₱1,000 buwanang subsidy para sa mga minimum wage earner, 10% discount sa mga pangunahing pangangailangan ng bata, at bayad na parental leave.",
+      "steps": [
+        "Bisitahin ang Solo Parent Office o City/Municipal Social Welfare and Development Office (C/MSWDO) sa inyong lokal na pamahalaan (LGU).",
+        "Kumuha ng Barangay Solo Parent Certification mula sa inyong barangay desk.",
+        "Dumalo sa oryentasyon tungkol sa iyong mga karapatan at benepisyo sa ilalim ng RA 11861.",
+        "Isumite ang mga dokumentong kailangan at sumailalim sa isang interview kasama ang isang social worker.",
+        "Kapag napatunayan na, kunin ang iyong Solo Parent Identification Card (SPIC) at Certificate of Eligibility."
+      ],
+      "requirements": [
+        "Dapat ay solong nag-aaruga at nagtataguyod sa anak/mga anak nang walang kinakasama o cohabitation",
+        "Birth certificate ng mga dependent (sakop hanggang 22 taong gulang kung walang asawa, walang trabaho, at nag-aaral)",
+        "Barangay certificate ng residency",
+        "Katibayan ng katayuan bilang solo parent (hal. death certificate ng asawa, deklarasyon ng nullity ng kasal, o medical certificate ng kapansanan ng asawa)",
+        "Income Tax Return o Certificate of Indigency"
+      ]
+    },
+    "dswd-aics": {
+      "name": "AICS (Tulong para sa mga Indibidwal na nasa Krisis)",
+      "description": "Nagbibigay ng agarang tulong medikal, pagpapalibing, edukasyon, transportasyon, pagkain, o pinansyal sa mga indibidwal at pamilyang nakakaranas ng hindi inaasahang krisis sa buhay.",
+      "steps": [
+        "Ipakita ang mga kinakailangang dokumento sa DSWD Crisis Intervention Unit (CIU) o satellite office.",
+        "Sumailalim sa screening at interview kasama ang isang DSWD Social Worker.",
+        "Maghintay para sa paghahanda ng Social Case Study Report o Certificate of Eligibility.",
+        "Tanggapin ang tulong pinansyal o Guarantee Letter (GL) para sa ospital/punerarya."
+      ],
+      "requirements": [
+        "Valid ID ng aplikante (Orihinal at Photocopy)",
+        "Barangay Certificate of Indigency o Residency",
+        "Medical Certificate / Abstract (para sa tulong medikal) o Death Certificate (para sa tulong pagpapalibing)",
+        "Hospital Bill, Laboratory Request, o Funeral Contract",
+        "Referral Letter (kung naaangkop)"
+      ]
+    },
+    "sss-unemp": {
+      "name": "Benepisyo sa Kawalan ng Trabaho",
+      "description": "Isang benepisyong cash na ibinibigay sa mga miyembrong empleyado (kabilang ang mga OFW at Kasambahay) na nawalan ng trabaho dahil sa retrenchment, redundancy, o pagsasara ng negosyo.",
+      "steps": [
+        "Kumuha ng DOLE Certification of Involuntary Separation.",
+        "Mag-log in sa iyong SSS Member Portal (My.SSS) online.",
+        "Pumunta sa 'Apply for Unemployment Benefit Claim' sa ilalim ng E-Services tab.",
+        "Punan ang mga detalye ng aplikasyon at i-upload ang DOLE Certification at valid ID.",
+        "Maghintay ng pag-apruba at pag-credit sa iyong nakarehistrong bank account."
+      ],
+      "requirements": [
+        "DOLE Certification of Involuntary Separation",
+        "Notice of Termination mula sa Employer O Notarized Affidavit of Termination",
+        "Kahit 36 buwanang kontribusyon sa SSS (12 dito ay dapat nasa loob ng 18 buwan bago ang pagkawala ng trabaho)",
+        "Nakarehistrong bank account sa SSS Disbursement Account Enrollment Module (DAEM)",
+        "Wala pang 60 taong gulang sa panahon ng pagkawala ng trabaho"
+      ]
+    },
+    "philhealth-yakap": {
+      "name": "YAKAP (Yaman ng Kalusugan Program)",
+      "description": "Isang pinahusay na pakete ng benepisyo sa pangunahing pangangalaga (na pumapalit sa dating Konsulta Package) na nagbibigay ng holistic na pangangalagang pangkalusugan kabilang ang libreng konsultasyong medikal, pinalawak na laboratoryo at cancer screening tests, at mga pangunahing gamot.",
+      "steps": [
+        "Tiyaking aktibo ang iyong membership sa PhilHealth at magparehistro online o sa lokal na opisina.",
+        "Pumili at magparehistro sa isang itinalagang PhilHealth YAKAP accredited provider (klinika/ospital).",
+        "Mag-iskedyul ng appointment para sa libreng konsultasyon at diagnostic testing.",
+        "Kunin ang mga niresetang gamot sa botika ng provider ng libre."
+      ],
+      "requirements": [
+        "Kopya ng Member Data Record (MDR)",
+        "Registration form para sa PhilHealth YAKAP Provider",
+        "Kahit 1 valid government ID"
+      ]
+    },
+    "pagibig-mpl": {
+      "name": "Multi-Purpose Loan (MPL)",
+      "description": "Isang cash loan na dinisenyo upang tulungan ang mga aktibong miyembro ng Pag-IBIG sa mga agarang pangangailangang pinansyal, kabilang ang matrikula, gastusing medikal, maliliit na pag-aayos sa bahay, o paglalakbay.",
+      "steps": [
+        "Punan ang Pag-IBIG Multi-Purpose Loan Application Form (MPLAF).",
+        "Kumuha ng pirma para sa Employer's Declaration section.",
+        "Isumite online gamit ang Virtual Pag-IBIG o sa pinakamalapit na branch.",
+        "Maghintay ng text notification ng pag-apruba.",
+        "Kunin ang cash gamit ang Pag-IBIG Loyalty Card Plus o cash card."
+      ],
+      "requirements": [
+        "Kumpletong MPL Application Form",
+        "Photocopy ng 2 valid government ID",
+        "Katibayan ng Kita (pinakabagong 1-buwang payslip)",
+        "Aktibong Loyalty Card Plus o nakarehistrong LandBank/UCPB cash card",
+        "Kahit 24 buwanang kontribusyon sa pagiging miyembro"
+      ]
+    },
+    "sss-maternity": {
+      "name": "Maternity Benefit",
+      "description": "Isang benepisyong cash na ibinibigay sa mga babaeng miyembro ng SSS na nanganak, nakunan, o sumailalim sa emergency termination of pregnancy.",
+      "steps": [
+        "Isumite ang Maternity Notification (Mat-1) online sa pamamagitan ng My.SSS portal kapag nakumpirma na ang pagbubuntis.",
+        "Pagkatapos manganak o makunan, isumite ang Maternity Benefit Application (Mat-2) kasama ang mga kailangang dokumento.",
+        "Para sa mga empleyado: Ang SSS ay nag-a-advance ng bayad sa employer, na siyang magbabayad sa empleyado. Ibabalik ng SSS ang pera sa employer.",
+        "Para sa mga voluntary/self-employed: Direktang ibabayad ng SSS sa nakarehistrong bank account."
+      ],
+      "requirements": [
+        "Naipasang Maternity Notification bago manganak",
+        "Katibayan ng Panganganak (Certified True Copy ng Birth Certificate / Certificate of Live Birth)",
+        "Kahit 3 buwanang kontribusyon sa SSS sa loob ng 12 buwan bago ang semestre ng panganganak",
+        "Nakarehistrong bank account (DAEM)",
+        "Medical certificate o ultrasound report (para sa mga nakunan)"
+      ]
+    },
+    "dswd-4ps": {
+      "name": "Pantawid Pamilyang Pilipino Program (4Ps)",
+      "description": "Isang programa sa pagpapaunlad ng tao na nagbibigay ng conditional cash grants sa mga pinakamahihirap na pamilya upang mapabuti ang kalusugan, nutrisyon, at edukasyon. Sa 2026, tumaas ang First 1,000 Days (F1KD) grant para sa mga buntis at batang wala pang dalawang taon mula ₱350 tungong ₱750 kada buwan, bukod pa sa health grant (₱750 kada sambahayan) at education grant na hindi bababa sa ₱300 kada bata.",
+      "steps": [
+        "Maghintay ng household assessment ng National Household Targeting System for Poverty Reduction (Listahanan) ng DSWD.",
+        "Ang mga napiling kabahayan ay sasailalim sa community validation.",
+        "Pirmahan ang 4Ps Oath of Commitment, nangangakong susunod sa mga kondisyon sa kalusugan at edukasyon.",
+        "Tanggapin ang LandBank cash cards para sa buwanan/kalahating buwang cash grant payouts."
+      ],
+      "requirements": [
+        "DSWD Listahanan poor classification (dapat targetin)",
+        "Ang mga buntis ay dapat makatanggap ng pre- at post-natal care",
+        "Ang mga batang 0-5 taong gulang ay dapat magkaroon ng regular checkups at bakuna",
+        "Ang mga batang 3-18 taong gulang ay dapat naka-enroll sa paaralan na may 85% attendance",
+        "Dapat dumalo ang mga magulang sa buwanang Family Development Sessions (FDS)"
+      ]
+    },
+    "dole-tupad": {
+      "name": "TUPAD (Emergency Employment)",
+      "description": "Isang community-based na tulong na nagbibigay ng emergency employment para sa mga nawalan ng trabaho, underemployed, at seasonal workers, sa minimum na 10 araw hanggang 90 araw sa mga natatanging sitwasyon.",
+      "steps": [
+        "Bisitahin ang pinakamalapit na DOLE Regional/Field Office o lokal na PESO (Public Employment Service Office) sa iyong LGU.",
+        "Isumite ang aplikasyon at profile sheet para sa pagsusuri.",
+        "Dumalo sa oryentasyon tungkol sa kaligtasan at kalusugan sa trabaho.",
+        "Gawin ang nakatalagang trabaho sa komunidad (hal. paglilinis ng kalsada, maliliit na pag-aayos, pagtatanim) sa loob ng 10-90 araw.",
+        "Kunin ang sweldo sa pamamagitan ng money remittance centers pagkatapos isumite ang daily time record."
+      ],
+      "requirements": [
+        "TUPAD Application Profile Sheet",
+        "1 valid ID",
+        "Indigency Certificate mula sa Barangay",
+        "Dapat hindi bababa sa 18 taong gulang",
+        "Dapat hindi aktibong empleyado ng gobyerno"
+      ]
+    },
+    "doh-maip": {
+      "name": "Medical Assistance to Indigent Patients (MAIP)",
+      "description": "Programa ng DOH na nagbibigay ng suportang pinansyal sa pamamagitan ng guarantee letters upang saklawin ang mga gastusing medikal (ospital, laboratoryo, gamot) sa mga pampublikong ospital at piling pribadong ospital.",
+      "steps": [
+        "Bisitahin ang Malasakit Center o Medical Social Service unit sa loob ng kasaling pampublikong ospital.",
+        "Ipakita ang mga kinakailangan sa opisyal para sa social welfare evaluation.",
+        "Pirmahan ang assessment sheet.",
+        "Tanggapin ang Guarantee Letter (GL) na ibabawas nang direkta sa iyong bill sa ospital."
+      ],
+      "requirements": [
+        "Medical Certificate o Clinical Summary",
+        "Certificate of Indigency mula sa Barangay o DSWD Social Case Study",
+        "Bill sa Ospital o Laboratory/Diagnostic Request",
+        "Reseta ng Doktor na may pagtatantya ng presyo",
+        "Valid ID ng pasyente o kamag-anak na kinatawan"
+      ]
+    },
+    "pagibig-housing": {
+      "name": "Regular Housing Loan",
+      "description": "Nagbibigay ng pautang hanggang ₱6 Milyon para pambili ng residential lot, house and lot package, condominium, o pagpapatayo/pag-aayos ng bahay, at babayaran ng hanggang 30 taon.",
+      "steps": [
+        "Isumite ang Housing Loan Application Form at mga inisyal na dokumento online o sa isang Pag-IBIG hub.",
+        "Magbayad ng non-refundable ₱1,000 processing fee.",
+        "Tanggapin ang Notice of Approval (NOA) at Letter of Guaranty (LOG).",
+        "Kumpletuhin ang mga post-approval requirements (hal. paglipat ng titulo, tax declaration) sa loob ng 90 araw.",
+        "Tanggapin ang loan proceeds check o bank transfer."
+      ],
+      "requirements": [
+        "Kahit 24 buwanang kontribusyon (sunod-sunod o lump sum)",
+        "Kumpletong Housing Loan Application Form na may litrato",
+        "Katibayan ng Kita (Payslip / Income Tax Return / Job Contract para sa mga OFW)",
+        "Kopya ng Transfer Certificate of Title (TCT) ng ari-arian",
+        "Tax Declaration at Real Estate Tax Receipt",
+        "Walang hindi nababayarang pautang sa Pag-IBIG"
+      ]
+    },
+    "gsis-retirement": {
+      "name": "Retirement Benefit",
+      "description": "Sinisiguro na ang mga aktibong miyembro ng GSIS ay makakatanggap ng pensyon (maaaring lump-sum check + buwanang annuity, o agad na buwanang pensyon) pagretiro sa serbisyo sa gobyerno.",
+      "steps": [
+        "Isumite ang aplikasyon online sa pamamagitan ng GSIS Touch mobile app o sa GSIS wireless kiosk (GW@PS).",
+        "Isumite ang pisikal na kopya ng service records at clearances sa Human Resources officer ng iyong ahensya.",
+        "Makatanggap ng abiso mula sa GSIS tungkol sa kalkulasyon ng benepisyo sa pensyon.",
+        "Ang pensyon ay direktang idedeposito sa iyong GSIS eCard (UMID) account."
+      ],
+      "requirements": [
+        "Kumpletong Application Form para sa Retirement Benefit",
+        "Declaration of Pendency/Non-Pendency of Case form",
+        "Service Record mula sa ahensya ng gobyerno",
+        "Kahit 15 taon sa serbisyo ng gobyerno",
+        "Dapat kahit 60 taong gulang pagretiro"
+      ]
+    },
+    "owwa-edsp": {
+      "name": "Education for Development Scholarship Program (EDSP)",
+      "description": "Isang scholarship grant na aabot sa ₱60,000 bawat taon para sa mga kwalipikadong dependent ng mga aktibong miyembro ng OFW na nagnanais kumuha ng 4 hanggang 5-taong baccalaureate course.",
+      "steps": [
+        "Mag-apply online sa pamamagitan ng OWWA Scholarship portal sa panahon ng application window.",
+        "I-upload ang mga scholastic record at patunay ng aktibong pagiging miyembro ng OFW.",
+        "Kumuha ng qualifying examination na pinangangasiwaan ng DOST-SEI.",
+        "Kapag napili, dumalo sa scholarship orientation at pirmahan ang Scholarship Agreement.",
+        "Kunin ang disbursement para sa matrikula at allowance bawat semestre."
+      ],
+      "requirements": [
+        "Anak ng aktibong OFW, o kapatid ng walang asawang OFW",
+        "Grade 12 student na may General Weighted Average na hindi bababa sa 85%",
+        "Katibayan ng aktibong SSS/OWWA membership ng OFW na magulang/kapatid",
+        "Birth Certificate ng estudyante (at ng OFW kung magkapatid)",
+        "Certificate of Good Moral Character"
+      ]
+    },
+    "sss-sickness": {
+      "name": "Sickness Benefit",
+      "description": "Isang pang-araw-araw na cash allowance na binabayaran para sa mga araw na ang isang miyembro ay hindi makapagtrabaho dahil sa sakit o pinsala, at naka-confine sa ospital o sa bahay nang hindi bababa sa 4 na araw.",
+      "steps": [
+        "Para sa mga empleyado: Ipaalam sa employer sa loob ng 5 araw ng pagsisimula ng sakit. Ang employer ang magsusumite ng claim sa SSS.",
+        "Para sa self-employed/voluntary: I-file ang SSS Sickness Benefit Application online sa My.SSS portal sa loob ng 14 araw ng pagsisimula ng sakit.",
+        "Isumite ang mga medical certificate at resulta ng laboratoryo para suriin ng SSS Medical Evaluation Department.",
+        "Makatanggap ng pang-araw-araw na cash reimbursement sa iyong nakarehistrong bank account (o sa pamamagitan ng iyong employer)."
+      ],
+      "requirements": [
+        "Kumpletong Sickness Benefit Application online",
+        "Medical Certificate (Form MM-1) na pinirmahan ng attending physician",
+        "Kahit 3 buwanang kontribusyon sa SSS sa loob ng 12 buwan bago ang semestre ng pagkakasakit",
+        "Mga resulta ng laboratoryo/diagnostics na sumusuporta sa diagnosis",
+        "Nakarehistrong bank account (DAEM)"
+      ]
+    },
+    "philhealth-newborn": {
+      "name": "Pakete ng Pangangalaga sa Bagong Silang (Newborn Care Package)",
+      "description": "Nagbibigay ng mga pangunahing serbisyong pangkalusugan para sa mga bagong silang na sanggol kabilang ang physical examination, eye prophylaxis, pagbibigay ng vitamin K, bakunang BCG, unang dosis ng bakuna sa hepatitis B, at newborn screening test.",
+      "steps": [
+        "Tiyaking aktibo ang membership sa PhilHealth bago manganak.",
+        "Isumite ang kopya ng Member Data Record (MDR) at valid ID sa billing section ng ospital.",
+        "Punan ang PhilHealth Claim Form 1 (CF-1) at Claim Form 2 (CF-2) sa ospital.",
+        "Ang Newborn Care Package ay awtomatikong ibabawas mula sa bill sa ospital para sa parehong ina at anak."
+      ],
+      "requirements": [
+        "Aktibong membership sa PhilHealth o pagpaparehistro ng dependent",
+        "Kumpletong PhilHealth Claim Form 1 (CF1)",
+        "Kumpletong PhilHealth Claim Form 2 (CF2)",
+        "Kopya ng Member Data Record (MDR)",
+        "Valid government ID ng miyembrong magulang"
+      ]
+    },
+    "sss-funeral": {
+      "name": "Benepisyo sa Pagpapalibing (Funeral Benefit)",
+      "description": "Isang benepisyong cash mula sa fixed na ₱12,000 (para sa 1-35 kontribusyon) hanggang ₱20,000 - ₱60,000 (para sa 36 o higit pang kontribusyon) na ibinibigay sa sinumang nagbayad ng gastusin sa pagpapalibing ng yumaong miyembro ng SSS.",
+      "steps": [
+        "Kumuha ng Certified True Copy ng Death Certificate mula sa lokal na civil registry o PSA.",
+        "Kunin ang opisyal na resibo mula sa funeral parlor na nagpapakita ng pangalan ng aplikante bilang nagbayad.",
+        "Mag-log in sa My.SSS Portal (E-Services tab) at piliin ang 'Apply for Funeral Benefit Claim'.",
+        "Punan ang online application at i-upload ang Death Certificate, Resibo ng Punerarya, at ID ng aplikante.",
+        "Maghintay ng pag-apruba at direktang pag-credit sa nakarehistrong bank account ng aplikante."
+      ],
+      "requirements": [
+        "Death Certificate ng yumaong miyembro (PSA copy o Certified True Copy)",
+        "Opisyal na Resibo ng gastusin sa libing na nakapangalan sa aplikante",
+        "Valid ID ng aplikante (Orihinal at Photocopy)",
+        "Pagpaparehistro ng Disbursement Account (DAEM) ng aplikante",
+        "Katibayan ng mga kontribusyon ng yumaong miyembro (kahit 1 kontribusyon)"
+      ]
+    },
+    "gsis-funeral": {
+      "name": "Benepisyo sa Pagpapalibing (Funeral Benefit)",
+      "description": "Isang benepisyong cash na nagkakahalaga ng ₱30,000 na ibinibigay sa nabubuhay na asawa, mga anak, o kung sino man ang nagbayad ng gastusin sa pagpapalibing ng yumaong miyembro o retirado ng GSIS.",
+      "steps": [
+        "I-download at punan ang GSIS Application Form para sa Funeral Benefit.",
+        "Kumuha ng certified photocopy ng Death Certificate.",
+        "Isumite ang aplikasyon sa pamamagitan ng GSIS Wireless Kiosk (GW@PS), GSIS Touch app, o i-email sa regional branch.",
+        "Isumite ang opisyal na resibo ng gastusin sa libing kung ang aplikante ay hindi ang nabubuhay na asawa.",
+        "Maghintay ng pag-credit sa eCard o bank account ng aplikante."
+      ],
+      "requirements": [
+        "Kumpletong GSIS Funeral Benefit Application Form",
+        "Death Certificate ng yumaong miyembro ng GSIS (PSA o Certified Local Copy)",
+        "Marriage Contract (PSA copy) kung ang nabubuhay na asawa ang aplikante",
+        "Opisyal na Resibo ng gastusin sa libing kung ang aplikante ay hindi asawa",
+        "Valid ID ng aplikante"
+      ]
+    },
+    "tesda-training": {
+      "name": "Libreng Pagsasanay sa Kasanayan at Scholarship (Free Skills Training & Scholarship)",
+      "description": "Nagbibigay ng libreng pagsasanay sa bokasyonal, assessment, at mga toolkit para sa pangkabuhayan sa ilalim ng mga programa tulad ng TWSP, STEP, at PESFA upang matulungan ang mga mamamayan na makahanap ng bagong trabaho.",
+      "steps": [
+        "Maghanap ng mga magagamit na kurso sa pagsasanay sa mga lokal na paaralang accredited ng TESDA o mga opisina nito.",
+        "Isumite ang mga application form kasama ang mga kinakailangang dokumento sa akademiko at demograpiko.",
+        "Dumalo sa screening o selection interview sa training center.",
+        "Kumpletuhin ang itinalagang oras ng pagsasanay sa silid-aralan at praktikal na aplikasyon.",
+        "Kumuha ng National Assessment upang matanggap ang National Certificate (NC I o NC II) pati ang toolkit o allowance."
+      ],
+      "requirements": [
+        "Kumpletong TESDA Enrollment Form",
+        "Barangay Clearance o Certificate of Indigency",
+        "Report card ng kahit High School Graduate o ALS Certificate",
+        "Form 137 o Transcript ng mga Rekord (Transcript of Records)",
+        "4 na kopya ng passport size na larawan (white background, may kwelyo, at may name tag)"
+      ]
+    }
+  },
+  "hero": {
+    "title": "Tuklasin ang mga Tulong at Benepisyo ng Pilipinas",
+    "desc": "Maghanap, mag-filter, at subaybayan ang mga kinakailangan para sa mga pambansang programa ng tulong. I-save ang mga programa para magamit ang checklist kahit walang internet."
+  },
+  "assistance": {
+    "title": "Tulong sa Aplikasyon at Dokumento",
+    "desc": "Gumawa ng mga pormal na sulat, affidavits, o authorization letters agad-agad, at sundan ang aming hakbang-hakbang na gabay para makakuha ng mga lokal na sertipiko.",
+    "tabGenerator": "Paggawa ng Dokumento",
+    "tabGuides": "Gabay sa Sertipiko",
+    "formTitle": "Mga Detalye ng Dokumento",
+    "previewTitle": "Preview ng Dokumento",
+    "downloadPdf": "I-download ang PDF",
+    "print": "I-print ang Dokumento",
+    "docType": "Uri ng Dokumento",
+    "selectDoc": "Pumili ng template...",
+    "authLetter": "Authorization Letter (Sulat ng Pagpapahintulot)",
+    "affidavitLowIncome": "Affidavit of Low Income (Salaysay ng Mababang Kita)",
+    "requestLetter": "Request Letter (Liham Kahilingan)",
+    "date": "Petsa",
+    "applicantName": "Buong Pangalan ng Aplikante",
+    "applicantAddress": "Tirahan ng Aplikante",
+    "repName": "Buong Pangalan ng Kinatawan",
+    "repAddress": "Tirahan ng Kinatawan",
+    "relationship": "Relasyon sa Kinatawan",
+    "purpose": "Layunin ng Hiling (hal. kumuha ng tulong pinansyal)",
+    "monthlyIncome": "Buwanang Kita (hal. ₱5,000 / Walang Permanenteng Kita)",
+    "livelihood": "Pinagkakakitaan / Trabaho",
+    "dependents": "Bilang ng mga Inaaruga (Dependents)",
+    "recipient": "Tatanggapan ng Sulat (hal. Hon. Mayor Juan dela Cruz)",
+    "office": "Pangalan ng Opisina / Ahensya",
+    "officeAddress": "Tirahan ng Opisina",
+    "patientName": "Buong Pangalan ng Pasyente (kung medikal/pagpapalibing)",
+    "explanation": "Maikling paliwanag ng sitwasyon ng pamilya",
+    "notaryText": "Nilahdaan at sinumpaan sa harap ko ngayong ika-___ ng ________, 20__.",
+    "guideTitle": "Gabay sa mga Kinakailangang Sertipiko",
+    "guideDesc": "Halos 90% ng mga programa ng gobyerno ay naghahanap ng mga sertipikong ito. Alamin kung paano kumuha nang mabilis.",
+    "selectGuide": "Pumili ng Sertipiko",
+    "barangayIndigency": "Barangay Certificate of Indigency",
+    "birNoIncome": "BIR Certificate of No Income",
+    "whereToGet": "Saan Kukunin",
+    "requirements": "Mga Kinakailangang Dokumento",
+    "fees": "Bayarin",
+    "timeline": "Oras ng Pagproseso",
+    "steps": "Hakbang-Hakbang na Proseso",
+    "tips": "Mahahalagang Tip para sa Aplikante",
+    "saveProgress": "Markahan ang mga nakumpletong hakbang upang ma-save ang iyong progreso.",
+    "complete": "Tapos Na",
+    "incomplete": "Hindi Pa Gawa",
+    "progress": "Progreso ng Paghahanda"
+  },
+  "pathways": {
+    "title": "Mga Pathway ng Buhay (Life Event Pathways)",
+    "desc": "Pumili ng mahalagang yugto ng buhay upang tingnan, pamahalaan, at markahan ang mga kinakailangang dokumento at hakbang sa aplikasyon sa gobyerno.",
+    "babyTitle": "Pagkakaroon ng Sanggol",
+    "babyDesc": "Mag-claim ng maternity benefit sa SSS, medical package para sa bagong silang, at mairehistro ang birth certificate ng bata.",
+    "babyTips": "Ipaalam sa iyong employer o SSS ang pagbubuntis agad kapag ito ay nakumpirma. Siguraduhing updated ang iyong mga kontribusyon sa PhilHealth bago manganak upang maging kwalipikado para sa mga newborn care package.",
+    "deathTitle": "Pagpanaw ng Kasapi ng Pamilya",
+    "deathDesc": "Kumuha ng death certificate, mag-apply ng funeral benefit sa SSS/GSIS, at pamahalaan ang mga paunang claim sa oras ng pagdadalamhati.",
+    "deathTips": "Siguraduhing ang opisyal na resibo ng punerarya ay nakapangalan sa iyo bilang nagbayad, dahil ang benepisyo ay ibinabayad sa taong gumastos sa pagpapalibing. Itabi ang kopya ng lokal at PSA-certified na death certificate.",
+    "jobLossTitle": "Pagkawala ng Trabaho / Transition",
+    "jobLossDesc": "Mag-apply para sa SSS unemployment benefit, magparehistro para sa libreng pagsasanay sa TESDA, at maghanap ng emergency na trabaho sa inyong lokalidad.",
+    "jobLossTips": "I-file ang iyong DOLE separation certificate sa loob ng 60 araw mula sa pagkakatanggal sa trabaho. Siguraduhing mayroon kang hindi bababa sa 36 na buwanang kontribusyon sa SSS upang makakuha ng unemployment payout.",
+    "retirementTitle": "Retirement at Pangangalaga sa Senior",
+    "retirementDesc": "Mag-transition sa retirement sa pamamagitan ng pag-secure ng SSS/GSIS pension, pag-claim ng indigent senior support, at pamamahala ng mga benepisyo sa katandaan.",
+    "retirementTips": "Isumite ang iyong aplikasyon sa pagreretiro sa buwan ng iyong kaarawan o petsa ng pagreretiro upang maiwasan ang pagkaantala. Tiyaking aktibo ang iyong UMID card at nakaugnay sa iyong bank account.",
+    "studentTitle": "Pagpasok sa Kolehiyo at Pagsasanay",
+    "studentDesc": "Kumuha ng subsidy sa tersyaryong edukasyon, mag-apply para sa scholarship, at magparehistro sa mga vocational training program.",
+    "studentTips": "Regular na suriin ang UniFAST portal para sa pagiging kwalipikado ng paaralan. Panatilihing mataas ang iyong mga marka upang mapanatili ang iyong subsidy.",
+    "familyTitle": "Solo Parents at Pangangalaga sa Pamilya",
+    "familyDesc": "Kumuha ng mga discount para sa solo parent, buwanang LGU subsidy, at mga benepisyo sa pangunahing kalusugan ng pamilya.",
+    "familyTips": "I-renew ang iyong Solo Parent ID taon-taon sa LGU social welfare office upang patuloy na makatanggap ng mga discount at subsidy.",
+    "selectEvent": "Pumili ng ibang Yugto ng Buhay",
+    "progress": "Progreso ng Kabuuang Pathway",
+    "coordinationTips": "Mga Gabay at Tagubilin mula sa Eksperto",
+    "bundleIncludes": "Ang pathway na ito ay pinagsasama ang mga sumusunod na programa ng gobyerno:"
+  },
+  "analytics": {
+    "title": "Pagsusuri ng Data",
+    "subtitle": "Isang komprehensibong pagsusuri sa mga programa at tulong ng pamahalaan ng Pilipinas sa kabuuang 20 natatanging programa.",
+    "executiveSummary": "Buod ng Pagsusuri",
+    "takeaway1Title": "Mga Nangungunang Ahensya",
+    "takeaway1Desc": "Ang Social Security System (SSS) at ang Department of Social Welfare and Development (DSWD) ang pinaka-aktibong ahensya sa dataset na ito, na nagbibigay ng kabuuang 8 na programa. Nakatuon ang SSS sa mga benepisyong nakabatay sa miyembro (Retirement, Pagkakasakit, Maternity), habang pinamamahalaan ng DSWD ang malawak na tulong tulad ng 4Ps at AICS.",
+    "takeaway2Title": "Pangunahing Uri ng Tulong",
+    "takeaway2Desc": "Tulong pinansyal ang pangunahing serbisyong inaalok na makikita sa 6 na magkakaibang programa. Sinusundan ito ng Edukasyon (4 na programa) at Cash Allowances/Pensions (3 programa bawat isa), na nagpapakita ng malakas na pagtuon sa direktang suportang pang-ekonomiya at pag-unlad ng tao.",
+    "takeaway3Title": "Mga Grupong Nangangailangan",
+    "takeaway3Desc": "Ang mga programa ay partikular na idinisenyo upang suportahan ang mga Indigent at Low-Income na indibidwal, pati na rin ang mga partikular na demograpiko tulad ng mga Seniors, Estudyante, at Retirees.",
+    "kpiTotalPrograms": "Kabuuang Programa",
+    "kpiAgencies": "Mga Ahensya ng Gobyerno",
+    "kpiCategories": "Mga Kategorya",
+    "kpiAvgRequirements": "Average na Dokumento",
+    "kpiAvgSteps": "Average na Hakbang",
+    "kpiActiveBookmarks": "Naka-save na Programa",
+    "chartAgenciesTitle": "Bilang ng Programa kada Ahensya",
+    "chartCategoriesTitle": "Bilang ng Programa kada Kategorya",
+    "chartAudiencesTitle": "Nangungunang 15 Target na Grupo para sa mga Programa",
+    "chartTagsTitle": "Nangungunang 15 Tags ng Programa",
+    "chartTooltipPrograms": "Mga Programa",
+    "chartTooltipPercentage": "Porsyento",
+    "viewAll": "Tingnan ang lahat ng kaugnay na programa",
+    "agencyFilterLabel": "I-filter ayon sa Ahensya",
+    "categoryFilterLabel": "I-filter ayon sa Kategorya"
+  },
+  "about": {
+    "title": "Tungkol sa Ayuda",
+    "subtitle": "Pinalalakas ang mga Pilipino sa pamamagitan ng malinaw, madaling ma-access, at pinasimpleng impormasyon tungkol sa mga benepisyo ng pamahalaan.",
+    "missionTitle": "Ang Ating Layunin",
+    "missionDesc": "Maaaring maging kumplikado ang paghahanap ng tulong pinansyal. Binuo ang Ayuda upang tulungan ang mga mamamayan sa pamamagitan ng pag-aayos ng mga alituntunin ng pamahalaan sa mga simpleng checklist.",
+    "valuesTitle": "Pangunahing Halaga (Core Values)",
+    "values": {
+      "transparency": "Ganap na Transparensya",
+      "transparencyDesc": "Ang lahat ng code at data sheet ay bukas sa publiko. Kahit sino ay maaaring mag-audit at magsaayos sa pagkalkula ng mga beneipisyo.",
+      "privacy": "Proteksyon sa Datos (Privacy-First)",
+      "privacyDesc": "Walang personal na impormasyon ang ipinapadala sa labas. Ang iyong mga sagot, bookmark, at dokumento ay ligtas na nakaimbak lamang sa iyong browser.",
+      "accessibility": "Para sa Lahat",
+      "accessibilityDesc": "Mabilis gamitin kahit mahina ang internet, may Large Text Mode para sa madaling pagbabasa, at naaayon sa mga accessibility tools."
+    },
+    "initiativeTitle": "Ugnayan ng Mamamayan",
+    "initiativeDesc": "Ang Ayuda ay isang independiyenteng proyekto na ginawa at pinapanatili ni Joshua Sarmiento, mula sa personal na layunin na gawing mas madaling ma-navigate ang tulong ng pamahalaan para sa mga ordinaryong Pilipino. Sinusunod ng interface ang disenyo ng <a href=\"https://bettergov.ph\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"font-bold text-blue-600 dark:text-blue-400 hover:underline\">BetterGov.ph</a>, isang civic tech na komunidad na naglalayong modernisahin ang pakikipag-ugnayan ng mga mamamayan sa mga pampublikong serbisyo. Naniniwala kami na ang mga digital na pampublikong sistema ay dapat bukas, madaling gamitin, at nakatuon sa tunay na pangangailangan ng tao.",
+    "openSourceTitle": "Bukas sa Kontribusyon",
+    "openSourceDesc": "Tulungan kaming magsaayos ng mga detalye, magdagdag ng lokal na tulong, o pagandahin ang system. Sama-sama nating buuin ang mas maayos na gabay ng pamahalaan.",
+    "contribButton": "Mag-ambag sa GitHub"
+  },
+  "faqs": {
+    "title": "Mga Madalas Itanong (FAQs)",
+    "subtitle": "May mga katanungan tungkol sa Ayuda? Narito ang mga sagot para tulungan ka.",
+    "searchPlaceholder": "Maghanap sa mga FAQ...",
+    "noResults": "Walang tugmang FAQ sa iyong hinahanap.",
+    "catAll": "Lahat ng Tanong",
+    "catGeneral": "Pangkalahatang Impormasyon",
+    "catPrivacy": "Privacy at Datos",
+    "catData": "Datos at Pag-update",
+    "catContrib": "Mga Kontribusyon",
+    "q1": "Ang Ayuda ba ay konektado sa gobyerno ng Pilipinas?",
+    "a1": "Hindi. Ang Ayuda ay isang 100% independiyente at open-source na proyekto na ginawa at pinapanatili ni Joshua Sarmiento. Sinusunod nito ang disenyo ng BetterGov.ph, ngunit hindi ito kaanib, itinataguyod, o pinondohan ng pamahalaan ng Pilipinas o ng alinman sa mga ahensya nito.",
+    "q2": "Libre ba ang paggamit ng Ayuda?",
+    "a2": "Oo, ganap na libre. Walang mga bayarin, ad, o premium na subscription. Ang proyekto ay binuo lamang bilang isang pampublikong serbisyo upang matulungan ang mga Pilipino na makatuklas ng mga programa ng tulong.",
+    "q3": "Nangongolekta ba o nag-a-imbak ang Ayuda ng aking personal na impormasyon?",
+    "a3": "Hindi. Ang Ayuda ay binuo nang may proteksyon sa datos. Ang anumang sagot mo sa Ayuda Finder (quiz), mga dokumentong ginagawa mo sa Document Generator, o mga naka-bookmark na programa ay nakaimbak lamang sa browser ng iyong sariling device. Walang data na ipinapadala sa aming mga server.",
+    "q4": "Saan galing ang mga datos ng mga programa ng tulong?",
+    "a4": "Ang lahat ng detalye ng programa, gabay, kinakailangan, at hakbang ay kinuha mula sa mga opisyal na pampublikong sanggunian ng pamahalaan tulad ng citizen charters, portal ng ahensya (SSS, GSIS, DSWD, atbp.), at mga opisyal na balita.",
+    "q5": "Gaano kadalas ina-update ang direktoryo ng mga benepisyo?",
+    "a5": "Regular na sinusubaybayan ang mga pagbabago at ina-update ang direktoryo sa pamamagitan ng tulong ng komunidad. Gayunpaman, maaaring magbago ang mga alituntunin ng pamahalaan nang walang paunawa. Inirerekumenda namin na kumpirmahin din ang mga kinakailangan sa opisyal na portal gamit ang mga link na ibinigay sa mga detalye ng benepisyo.",
+    "q6": "Paano ko maiuulat ang maling impormasyon o paano magmungkahi ng bagong benepisyo?",
+    "a6": "Maaari kang magmungkahi ng mga pagwawasto o maghain ng mga bagong programa sa pamamagitan ng paggawa ng issue o pull request sa aming GitHub repository, o sa pamamagitan ng pakikipag-ugnayan sa amin sa aming contact page."
+  },
+  "sitemap": {
+    "title": "Sitemap",
+    "subtitle": "Gamitin ang aming sitemap upang mabilis na mahanap at ma-access ang anumang pahina o tool sa Ayuda.",
+    "coreTools": "Pangunahing Tools at Direktoryo",
+    "coreToolsDesc": "Ang aming mga pangunahing tool upang maghanap, mag-filter, at mag-ayos ng mga benepisyo ng gobyerno.",
+    "resources": "Mga Mapagkukunan at Kontakin",
+    "resourcesDesc": "Opisyal na hotlines ng ahensya, locator ng sangay, at mga template ng dokumento.",
+    "meta": "Tungkol sa Proyekto at Impormasyon",
+    "metaDesc": "Alamin ang higit pa tungkol sa inisyatiba, team, mga FAQ, at form para sa pakikipag-ugnayan."
+  }
+}
