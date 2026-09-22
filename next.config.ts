@@ -9,6 +9,18 @@ const nextConfig: NextConfig = {
    */
   async redirects() {
     return [
+      /**
+       * Force plain HTTP onto HTTPS. Without this the site answers 200 on
+       * `http://ayudaph.org`, so every page is reachable over an insecure
+       * scheme. Placed first so it also covers `http://www.ayudaph.org`,
+       * which the www rule below would otherwise only fix for HTTPS.
+       */
+      {
+        source: "/:path*",
+        has: [{ type: "header", key: "x-forwarded-proto", value: "http" }],
+        destination: "https://ayudaph.org/:path*",
+        permanent: true,
+      },
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.ayudaph.org" }],

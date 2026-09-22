@@ -3,17 +3,9 @@
 import { ChevronDownIcon, HelpCircleIcon, SearchIcon } from "lucide-react";
 import { useMemo, useState } from "react";
 import PageHeader from "@/components/ui/PageHeader";
+import { FAQ_ITEMS } from "@/lib/faqs";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-
-const FAQ_ITEMS = [
-  { id: "1", category: "catGeneral" },
-  { id: "2", category: "catGeneral" },
-  { id: "3", category: "catPrivacy" },
-  { id: "4", category: "catData" },
-  { id: "5", category: "catData" },
-  { id: "6", category: "catContrib" },
-] as const;
 
 const CATEGORIES = [
   "catAll",
