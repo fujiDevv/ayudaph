@@ -67,7 +67,7 @@ Vite, deployed to Cloudflare Workers.
 | UI              | React 19, TypeScript                                               |
 | Styling         | Tailwind CSS v4 (`@theme` design tokens)                           |
 | Icons           | `lucide-react`, `@icons-pack/react-simple-icons`                   |
-| Maps            | Leaflet + OpenStreetMap / CARTO tiles                              |
+| Maps            | Leaflet + OpenStreetMap standard tiles (no API key)                 |
 | External data   | PSGC (regions/provinces), Nominatim (geocoding), Overpass API      |
 | Testing         | Vitest                                                             |
 | Package manager | pnpm                                                               |
@@ -122,6 +122,7 @@ The dev server starts on <http://localhost:3000>.
 │   ├── pathways/               # Life event bundles
 │   ├── assistance/             # Document generator + prerequisite guides
 │   ├── locator/                # Branch map
+│   ├── api/branches/           # Validated, same-origin Overpass lookup
 │   ├── analytics/              # Charts dashboard
 │   ├── hotlines/ shortlist/ about/ faqs/ contact/ search/ sitemap/
 │   ├── offline/                # PWA offline fallback
@@ -218,6 +219,22 @@ large-text mode adds a `large-text` class to `<html>`.
 - **Cross-origin requests** — never cached, so live map and agency data stays fresh.
 
 The worker is registered in production builds only, so it can never serve stale chunks over HMR.
+
+The branch locator sends map bounds to `/api/branches`, which queries independent public
+Overpass providers from the server. This avoids browser restrictions on third-party API requests.
+Each provider has a 40-second deadline covering queueing, query execution, and transfer. Successful
+responses allow short-lived HTTP caching; failed or incomplete searches are never cached as empty
+results. The initial map loads a dated Metro Manila fallback immediately; live lookup runs when
+the visitor searches the map or selects a province. Available locations remain visible if live
+lookup is unavailable. Live results are limited to government and insurance offices to avoid
+matching roads, transport routes, and unrelated shops with agency abbreviations in their names.
+
+`data/branch-fallback.json` contains **44 OpenStreetMap office locations** in the initial Metro
+Manila map area, with the source date and attribution included. It is a partial geographic fallback,
+not a nationwide agency directory. To refresh it, export the same bounding box from Overpass with
+`out center tags`, then run `node tools/import-branch-fallback.mjs <export.json>`. Failed and partial
+exports are rejected. This dataset is © OpenStreetMap contributors and distributed under the
+[Open Database License](https://opendatacommons.org/licenses/odbl/1-0/), separately from the app's MIT license.
 
 ---
 

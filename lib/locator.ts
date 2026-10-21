@@ -59,3 +59,35 @@ export function createLatestRequest() {
     },
   };
 }
+
+function classifyAgency(name: string): string {
+  const lower = name.toLowerCase();
+  if (lower.includes("dswd")) return "DSWD";
+  if (lower.includes("philhealth")) return "PhilHealth";
+  if (lower.includes("pag-ibig") || lower.includes("pag ibig")) return "Pag-IBIG";
+  if (lower.includes("sss") || lower.includes("social security system")) return "SSS";
+  if (lower.includes("gsis") || lower.includes("government service insurance")) return "GSIS";
+  if (lower.includes("dole") || lower.includes("department of labor")) return "DOLE";
+  if (lower.includes("doh") || lower.includes("department of health")) return "DOH";
+  if (lower.includes("owwa") || lower.includes("overseas workers")) return "OWWA";
+  return "Other";
+}
+
+export function parseBranches(data: unknown): Branch[] {
+  if (!isRecord(data) || !Array.isArray(data.elements) || data.remark) {
+    throw new Error("Incomplete branch response");
+  }
+  return data.elements.flatMap((element): Branch[] => {
+    if (!isRecord(element) || typeof element.id !== "number" || !isRecord(element.tags)) return [];
+    const center = isRecord(element.center) ? element.center : {};
+    const coords = { lat: element.lat ?? center.lat, lng: element.lon ?? center.lon };
+    if (!isCoordinates(coords) || typeof element.tags.name !== "string") return [];
+    const tags = element.tags;
+    const name = tags.name as string;
+    const address = ["addr:housenumber", "addr:street", "addr:city"]
+      .map(key => tags[key])
+      .filter(value => typeof value === "string")
+      .join(", ") || "No address provided";
+    return [{ id: String(element.id), agency: classifyAgency(name), name, ...coords, address }];
+  });
+}

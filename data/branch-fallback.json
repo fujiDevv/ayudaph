@@ -1,0 +1,532 @@
+{
+  "source": "https://www.openstreetmap.org",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "attribution": "© OpenStreetMap contributors",
+  "updated_at": "2026-10-21T02:54:14Z",
+  "coverage": "Metro Manila initial map area",
+  "bounds": [
+    14.558,
+    120.956,
+    14.641,
+    121.118
+  ],
+  "elements": [
+    {
+      "type": "node",
+      "id": 255063753,
+      "lat": 14.5752232,
+      "lon": 121.0609901,
+      "tags": {
+        "addr:city": "Pasig",
+        "addr:street": "Shaw Boulevard",
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1038225282,
+      "lat": 14.590497,
+      "lon": 120.9839797,
+      "tags": {
+        "addr:city": "Manila",
+        "addr:street": "Natividad Lopez Street",
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1185637964,
+      "lat": 14.6399414,
+      "lon": 121.0165867,
+      "tags": {
+        "addr:street": "Fernando Poe Jr. Avenue",
+        "name": "SSS",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3241939908,
+      "lat": 14.5625878,
+      "lon": 121.0232117,
+      "tags": {
+        "addr:city": "Makati",
+        "addr:street": "Jupiter Street",
+        "name": "PhilHealth",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3509432475,
+      "lat": 14.5896937,
+      "lon": 121.0387413,
+      "tags": {
+        "name": "Pag-IBIG Fund Head Office",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3708838701,
+      "lat": 14.5678662,
+      "lon": 121.0658406,
+      "tags": {
+        "addr:city": "Pasig",
+        "addr:street": "Pasig Boulevard",
+        "name": "Government Service Insurance System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3745112025,
+      "lat": 14.5655381,
+      "lon": 120.9949274,
+      "tags": {
+        "addr:city": "Manila",
+        "addr:housenumber": "967",
+        "addr:street": "Leon Guinto Street",
+        "name": "Department of Labor and Employment",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3967313972,
+      "lat": 14.5748722,
+      "lon": 121.0606431,
+      "tags": {
+        "addr:city": "Pasig",
+        "addr:street": "Shaw Boulevard",
+        "name": "Pag-Ibig",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4311627399,
+      "lat": 14.590014,
+      "lon": 121.0849995,
+      "tags": {
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4324729486,
+      "lat": 14.6263043,
+      "lon": 121.0729856,
+      "tags": {
+        "addr:city": "Quezon City",
+        "addr:street": "Padre Burgos Street",
+        "name": "DSWD NCR",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4344376390,
+      "lat": 14.6000567,
+      "lon": 120.9989384,
+      "tags": {
+        "addr:city": "Manila",
+        "addr:housenumber": "1810",
+        "addr:street": "Jose P. Laurel Street",
+        "name": "PhilHealth",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4455663490,
+      "lat": 14.6165783,
+      "lon": 121.0000694,
+      "tags": {
+        "addr:street": "España Boulevard",
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4529482489,
+      "lat": 14.5772743,
+      "lon": 121.0628311,
+      "tags": {
+        "addr:street": "Meralco Avenue",
+        "name": "Philhealth Local Health Insurance Office",
+        "office": "insurance"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4643518590,
+      "lat": 14.5978011,
+      "lon": 120.9752067,
+      "tags": {
+        "addr:city": "Manila",
+        "addr:street": "Juan Luna Street",
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5728218322,
+      "lat": 14.6406585,
+      "lon": 121.0356608,
+      "tags": {
+        "addr:city": "Quezon City",
+        "addr:housenumber": "Corporate 145 Building",
+        "addr:street": "Mother Ignacia Avenue",
+        "name": "PhilHealth NCR Central",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7067118334,
+      "lat": 14.5715575,
+      "lon": 121.0159298,
+      "tags": {
+        "addr:city": "Makati",
+        "addr:street": "J. P. Rizal Street",
+        "name": "Pag-IBIG Fund",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7067118335,
+      "lat": 14.5715867,
+      "lon": 121.0159439,
+      "tags": {
+        "addr:city": "Makati",
+        "addr:street": "J. P. Rizal Street",
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7564638986,
+      "lat": 14.6105219,
+      "lon": 120.9800361,
+      "tags": {
+        "addr:city": "Manila",
+        "addr:street": "Masangkay Street",
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8636730945,
+      "lat": 14.6222661,
+      "lon": 121.0582736,
+      "tags": {
+        "addr:street": "15th Avenue",
+        "name": "Pag-IBIG Fund",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8749986845,
+      "lat": 14.6011465,
+      "lon": 120.9946217,
+      "tags": {
+        "name": "SSS Legarda",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9121425223,
+      "lat": 14.5855212,
+      "lon": 121.0356702,
+      "tags": {
+        "addr:city": "Mandaluyong",
+        "addr:street": "Barangay Road",
+        "name": "DOH National Capital Regional Office",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9153976156,
+      "lat": 14.5659221,
+      "lon": 121.045708,
+      "tags": {
+        "addr:street": "P. Burgos Street",
+        "name": "Pag-IBIG Fund",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10164121512,
+      "lat": 14.626345,
+      "lon": 121.0727236,
+      "tags": {
+        "name": "DSWD Rehabilitation Sheltered Workshop",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11037589605,
+      "lat": 14.6043589,
+      "lon": 120.9729705,
+      "tags": {
+        "name": "PhilHealth Express",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11066929215,
+      "lat": 14.5759916,
+      "lon": 120.9843346,
+      "tags": {
+        "name": "Pag-IBIG Fund",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11079239805,
+      "lat": 14.604442,
+      "lon": 120.97289,
+      "tags": {
+        "name": "PAG-IBIG Fund",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11607974133,
+      "lat": 14.6022698,
+      "lon": 121.0135728,
+      "tags": {
+        "name": "Pag-Ibig Fund",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11607974134,
+      "lat": 14.6021854,
+      "lon": 121.0133267,
+      "tags": {
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12583313992,
+      "lat": 14.6370471,
+      "lon": 121.1014593,
+      "tags": {
+        "name": "Pag-Ibig",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13426643144,
+      "lat": 14.6308672,
+      "lon": 121.0168592,
+      "tags": {
+        "addr:street": "Quezon Avenue",
+        "name": "DOLE - Quezon City Field Office",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13982043202,
+      "lat": 14.5879376,
+      "lon": 121.044129,
+      "tags": {
+        "addr:housenumber": "500",
+        "addr:street": "Shaw Boulevard",
+        "name": "Pag-IBIG Fund - Mandaluyong - Shaw Zentrum",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13982043203,
+      "lat": 14.5879932,
+      "lon": 121.0439315,
+      "tags": {
+        "addr:housenumber": "500",
+        "addr:street": "Shaw Boulevard",
+        "name": "PhilHealth Local Health Insurance Office - Mandaluyong",
+        "office": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13982043301,
+      "lat": 14.5880009,
+      "lon": 121.0440262,
+      "tags": {
+        "name": "Social Security System - Mandaluyong - Shaw Branch",
+        "office": "government"
+      }
+    },
+    {
+      "type": "way",
+      "id": 32775167,
+      "center": {
+        "lat": 14.6366656,
+        "lon": 121.045305
+      },
+      "tags": {
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "way",
+      "id": 35799065,
+      "center": {
+        "lat": 14.5621905,
+        "lon": 121.0264951
+      },
+      "tags": {
+        "addr:city": "Makati",
+        "addr:street": "Senator Gil J. Puyat Avenue",
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "way",
+      "id": 82699914,
+      "center": {
+        "lat": 14.639722,
+        "lon": 121.0474217
+      },
+      "tags": {
+        "addr:city": "Quezon City",
+        "addr:street": "East Avenue",
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "way",
+      "id": 82900147,
+      "center": {
+        "lat": 14.6188505,
+        "lon": 121.051751
+      },
+      "tags": {
+        "name": "SSS Cubao",
+        "office": "government"
+      }
+    },
+    {
+      "type": "way",
+      "id": 164688113,
+      "center": {
+        "lat": 14.6152118,
+        "lon": 120.9809692
+      },
+      "tags": {
+        "addr:city": "Manila",
+        "addr:street": "Rizal Avenue",
+        "name": "Department of Health San Lazaro Compound",
+        "office": "government"
+      }
+    },
+    {
+      "type": "way",
+      "id": 263566436,
+      "center": {
+        "lat": 14.622862,
+        "lon": 121.0734382
+      },
+      "tags": {
+        "name": "Department of Health 4A Calabarzon",
+        "office": "government"
+      }
+    },
+    {
+      "type": "way",
+      "id": 263566445,
+      "center": {
+        "lat": 14.6232192,
+        "lon": 121.0730608
+      },
+      "tags": {
+        "name": "Department of Health 4B Mimaropa",
+        "office": "government"
+      }
+    },
+    {
+      "type": "way",
+      "id": 283130858,
+      "center": {
+        "lat": 14.5896879,
+        "lon": 121.0229528
+      },
+      "tags": {
+        "addr:street": "New Panaderos Street",
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310622172,
+      "center": {
+        "lat": 14.6025609,
+        "lon": 121.0268772
+      },
+      "tags": {
+        "addr:city": "San Juan",
+        "addr:street": "F. Blumentritt Street",
+        "name": "Social Security System",
+        "office": "government"
+      }
+    },
+    {
+      "type": "way",
+      "id": 331769755,
+      "center": {
+        "lat": 14.5870193,
+        "lon": 120.9778468
+      },
+      "tags": {
+        "addr:city": "Manila",
+        "addr:street": "Muralla Street",
+        "name": "Department of Labor and Employment",
+        "office": "government"
+      }
+    },
+    {
+      "type": "way",
+      "id": 804063622,
+      "center": {
+        "lat": 14.6352259,
+        "lon": 121.0428929
+      },
+      "tags": {
+        "addr:city": "Quezon City",
+        "addr:housenumber": "795",
+        "addr:street": "EDSA",
+        "name": "Pag-IBIG Fund",
+        "office": "government"
+      }
+    }
+  ]
+}

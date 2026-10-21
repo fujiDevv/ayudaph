@@ -28,6 +28,11 @@
     "browseAll": "Browse all benefits"
   },
   "locator": {
+    "fallbackCoverage": "Offline branch locations cover the initial Metro Manila map area (OpenStreetMap data as of {date}). Live searches can find branches elsewhere.",
+    "branchLookupUnavailable": "Branch search is temporarily unavailable. Please try again shortly.",
+    "cachedBranchesNotice": "Live branch search is temporarily unavailable. Showing available branch locations.",
+    "searchingBranches": "Searching for branches…",
+    "searchMapArea": "Search Map Area",
     "title": "Agency Branch Locator",
     "desc": "Find the nearest government agency branches like PhilHealth, Pag-IBIG, SSS, GSIS, DOLE, DOH, OWWA, and DSWD based on your current location.",
     "filterBy": "Filter by Agency",

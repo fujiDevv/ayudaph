@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 import { LoaderIcon, MapIcon, SearchIcon } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import PageHeader from "@/components/ui/PageHeader";
+import branchFallback from "@/data/branch-fallback.json";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import {
@@ -13,6 +14,7 @@ import {
   isBranches,
   isCoordinates,
   isPsgcEntries,
+  parseBranches,
   type Branch,
   type PsgcEntry,
 } from "@/lib/locator";
@@ -54,28 +56,9 @@ const LEGEND = [
   { label: "OWWA", className: "bg-cyan-600" },
 ];
 
-const OVERPASS_ENDPOINTS = [
-  "https://overpass-api.de/api/interpreter",
-  "https://lz4.overpass-api.de/api/interpreter",
-  "https://z.overpass-api.de/api/interpreter",
-];
-
-const BRANCHES_KEY = "ayuda_branches";
-const BBOXES_KEY = "ayuda_cached_bboxes";
-
-function classifyAgency(name: string): string {
-  const lower = name.toLowerCase();
-  if (lower.includes("dswd")) return "DSWD";
-  if (lower.includes("philhealth")) return "PhilHealth";
-  if (lower.includes("pag-ibig") || lower.includes("pag ibig")) return "Pag-IBIG";
-  if (lower.includes("sss") || lower.includes("social security system")) return "SSS";
-  if (lower.includes("gsis") || lower.includes("government service insurance"))
-    return "GSIS";
-  if (lower.includes("dole") || lower.includes("department of labor")) return "DOLE";
-  if (lower.includes("doh") || lower.includes("department of health")) return "DOH";
-  if (lower.includes("owwa") || lower.includes("overseas workers")) return "OWWA";
-  return "Other";
-}
+// Reset legacy broad name matches, which included roads and unrelated shops.
+const BRANCHES_KEY = "ayuda_branches_v2";
+const BBOXES_KEY = "ayuda_cached_bboxes_v2";
 
 export default function BranchLocator() {
   const { t } = useI18n();
@@ -86,16 +69,22 @@ export default function BranchLocator() {
   const branchesRef = useRef<Branch[]>([]);
   const cachedBboxesRef = useRef<Set<string>>(new Set());
 
+  const areaRequest = useRef(createLatestRequest());
+  const agencyRef = useRef("All Agencies");
+
   const regionRequest = useRef(createLatestRequest());
   const locationRequest = useRef(createLatestRequest());
 
   useEffect(() => () => {
+    areaRequest.current.cancel();
     regionRequest.current.cancel();
     locationRequest.current.cancel();
   }, []);
 
   const [ready, setReady] = useState(false);
   const [agency, setAgency] = useState("All Agencies");
+  agencyRef.current = agency;
+  const [searchLoading, setSearchLoading] = useState(false);
   const [regions, setRegions] = useState<PsgcEntry[]>([]);
   const [regionCode, setRegionCode] = useState("");
   const [provinces, setProvinces] = useState<PsgcEntry[]>([]);
@@ -155,6 +144,11 @@ export default function BranchLocator() {
   const searchArea = useCallback(async () => {
     const map = mapRef.current;
     if (!map) return;
+    const request = areaRequest.current.start();
+    setSearchLoading(false);
+    setError("");
+    // Cached pins remain useful even if every public server is unavailable.
+    renderMarkers(agencyRef.current);
 
     if (map.getZoom() < 12) {
       setError("Please zoom in closer to search for branches.");
@@ -172,75 +166,20 @@ export default function BranchLocator() {
       .toFixed(2)},${bounds.getEast().toFixed(2)}`;
 
     if (cachedBboxesRef.current.has(cacheKey)) {
-      renderMarkers(agency);
       return;
     }
 
-    setLoading(true);
-    setError("");
-
+    setSearchLoading(true);
     const bbox = `${bounds.getSouth()},${bounds.getWest()},${bounds.getNorth()},${bounds.getEast()}`;
-    const query = `
-      [out:json][timeout:15];
-      (
-        node["name"~"DSWD|PhilHealth|Pag-IBIG|Pag IBIG|SSS|Social Security System|GSIS|Government Service Insurance|DOLE|Department of Labor|DOH|Department of Health|OWWA|Overseas Workers",i](${bbox});
-        way["name"~"DSWD|PhilHealth|Pag-IBIG|Pag IBIG|SSS|Social Security System|GSIS|Government Service Insurance|DOLE|Department of Labor|DOH|Department of Health|OWWA|Overseas Workers",i](${bbox});
-      );
-      out center;
-    `;
 
     try {
-      let data: { elements?: Record<string, unknown>[] } | null = null;
-      let lastError: unknown = null;
-
-      for (const endpoint of OVERPASS_ENDPOINTS) {
-        try {
-          const controller = new AbortController();
-          const timer = setTimeout(() => controller.abort(), 6000);
-          const res = await fetch(`${endpoint}?data=${encodeURIComponent(query)}`, {
-            signal: controller.signal,
-          });
-          clearTimeout(timer);
-          if (res.ok) {
-            data = await res.json();
-            break;
-          }
-          lastError = new Error(`Server returned ${res.status}`);
-        } catch (err) {
-          lastError = err;
-        }
-      }
-
-      if (!data) throw lastError ?? new Error("Failed to fetch from OpenStreetMap");
-
-      const elements = (data.elements ?? []) as Array<{
-        id: number;
-        lat?: number;
-        lon?: number;
-        center?: { lat: number; lon: number };
-        tags?: Record<string, string>;
-      }>;
-
-      const incoming: Branch[] = elements.map((el) => {
-        const name = el.tags?.name ?? "Unknown Branch";
-        const address =
-          [
-            el.tags?.["addr:housenumber"],
-            el.tags?.["addr:street"],
-            el.tags?.["addr:city"],
-          ]
-            .filter(Boolean)
-            .join(", ") || "No address provided";
-        return {
-          id: el.id.toString(),
-          agency: classifyAgency(name),
-          name,
-          lat: el.lat ?? el.center?.lat ?? 0,
-          lng: el.lon ?? el.center?.lon ?? 0,
-          address,
-        };
+      const response = await fetch(`/api/branches?bbox=${encodeURIComponent(bbox)}`, {
+        signal: request.signal,
       });
-
+      if (!response.ok) throw new Error(`Branch search returned ${response.status}`);
+      const incoming: unknown = await response.json();
+      if (!isBranches(incoming)) throw new Error("Invalid branch response");
+      if (!request.isCurrent()) return;
       const existingIds = new Set(branchesRef.current.map((b) => b.id));
       const unique = incoming.filter((b) => !existingIds.has(b.id));
 
@@ -252,14 +191,16 @@ export default function BranchLocator() {
 
       cachedBboxesRef.current.add(cacheKey);
       writeStoredJSON(BBOXES_KEY, Array.from(cachedBboxesRef.current));
-      renderMarkers(agency);
-    } catch (err) {
-      console.error(err);
-      setError("Failed to load branches. Please try again.");
+      renderMarkers(agencyRef.current);
+    } catch {
+      if (request.isCurrent()) {
+        setError(t(branchesRef.current.length > 0
+          ? "locator.cachedBranchesNotice" : "locator.branchLookupUnavailable"));
+      }
     } finally {
-      setLoading(false);
+      if (request.isCurrent()) setSearchLoading(false);
     }
-  }, [agency, renderMarkers]);
+  }, [renderMarkers, t]);
 
   // Initialise the Leaflet map once the container is mounted.
   useEffect(() => {
@@ -272,12 +213,12 @@ export default function BranchLocator() {
       leafletRef.current = L;
       const map = L.map(containerRef.current).setView([14.5995, 121.0366], 13);
       L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
         {
           attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-          subdomains: "abcd",
-          maxZoom: 20,
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          referrerPolicy: "strict-origin-when-cross-origin",
+          maxZoom: 19,
         },
       ).addTo(map);
       mapRef.current = map;
@@ -294,22 +235,25 @@ export default function BranchLocator() {
     };
   }, []);
 
-  // Restore cached branches/bboxes and run an initial search.
+  // Restore cached and bundled branch locations once the map is ready.
   useEffect(() => {
     if (!ready) return;
     const cachedBranches = readStoredJSON(BRANCHES_KEY);
-    if (isBranches(cachedBranches)) {
-      branchesRef.current = cachedBranches;
-      setBranchCount(cachedBranches.length);
-    }
+    const fallback = parseBranches(branchFallback);
+    branchesRef.current = [...new Map(
+      [...fallback, ...(isBranches(cachedBranches) ? cachedBranches : [])]
+        .map(branch => [branch.id, branch]),
+    ).values()];
+    setBranchCount(branchesRef.current.length);
     const cachedBboxes = readStoredJSON(BBOXES_KEY);
     if (Array.isArray(cachedBboxes)) {
       cachedBboxes.filter((key): key is string => typeof key === "string")
         .forEach(key => cachedBboxesRef.current.add(key));
     }
-    searchArea();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ready]);
+    // The initial map has a dated local fallback; live requests are triggered
+    // by Search Map Area or selecting a province instead of blocking first load.
+    renderMarkers(agencyRef.current);
+  }, [ready, renderMarkers]);
 
   // Re-render pins when the agency filter changes.
   useEffect(() => {
@@ -510,15 +454,15 @@ export default function BranchLocator() {
             <button
               type="button"
               onClick={searchArea}
-              disabled={loading}
+              disabled={loading || searchLoading}
               className="flex items-center gap-2 bg-primary-50 hover:bg-primary-100 text-primary-600 px-4 py-2 rounded-md text-sm font-semibold transition-colors disabled:opacity-50"
             >
-              {loading ? (
+              {loading || searchLoading ? (
                 <LoaderIcon className="w-4 h-4 animate-spin" />
               ) : (
                 <SearchIcon className="w-4 h-4" />
               )}
-              Search Map Area
+              {searchLoading ? t("locator.searchingBranches") : t("locator.searchMapArea")}
             </button>
 
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs font-semibold text-gray-600 bg-gray-50 px-4 py-2.5 rounded-md border border-gray-100">
@@ -537,7 +481,10 @@ export default function BranchLocator() {
           </div>
 
           {error && (
-            <div className="mb-4 p-3 bg-error-50 text-error-600 text-sm font-medium rounded-md">
+            <div role="status" className={cn(
+              "mb-4 p-3 text-sm font-medium rounded-md",
+              branchCount > 0 ? "bg-primary-50 text-primary-700" : "bg-error-50 text-error-600",
+            )}>
               {error}
             </div>
           )}
@@ -557,6 +504,11 @@ export default function BranchLocator() {
               </p>
             )}
           </div>
+          <p className="mt-2 text-xs text-gray-600">
+            {t("locator.fallbackCoverage", {
+              date: branchFallback.updated_at.slice(0, 10),
+            })}
+          </p>
         </div>
       </div>
     </>

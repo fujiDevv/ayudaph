@@ -28,6 +28,11 @@
     "browseAll": "Tingnan lahat ng benepisyo"
   },
   "locator": {
+    "fallbackCoverage": "Saklaw ng mga offline na lokasyon ang unang lugar ng mapa sa Metro Manila (OpenStreetMap data noong {date}). Maaaring maghanap ng mga sangay sa ibang lugar gamit ang live na paghahanap.",
+    "branchLookupUnavailable": "Pansamantalang hindi magamit ang paghahanap ng sangay. Subukan muli mamaya.",
+    "cachedBranchesNotice": "Pansamantalang hindi magamit ang live na paghahanap. Ipinapakita ang mga available na lokasyon ng sangay.",
+    "searchingBranches": "Naghahanap ng mga sangay…",
+    "searchMapArea": "Maghanap sa lugar ng mapa",
     "title": "Locator ng Sangay ng Ahensya",
     "desc": "Hanapin ang pinakamalapit na sangay ng ahensya ng gobyerno tulad ng PhilHealth, Pag-IBIG, SSS, GSIS, DOLE, DOH, OWWA, at DSWD base sa iyong lokasyon.",
     "filterBy": "I-filter ayon sa Ahensya",

@@ -230,7 +230,7 @@ Tailwind v4 `@theme` tokens.
 - **Icons** come from `lucide-react`; brand marks come from `@icons-pack/react-simple-icons`.
 - **Local persistence** uses `localStorage`. Existing keys include `ayuda_saved`,
   `ayuda_checked_reqs`, `ayuda_large_text`, `ayuda_locale`, `ayuda_pathways_progress`,
-  `ayuda_guide_checked`, and the locator caches (`ayuda_branches`, `ayuda_cached_bboxes`,
+  `ayuda_guide_checked`, and the locator caches (`ayuda_branches_v2`, `ayuda_cached_bboxes_v2`,
   `psgc_regions`, `psgc_provinces_<code>`, `geocode_<query>`). Use a new `ayuda_`-prefixed key
   rather than repurposing one.
 - Use the helpers in `lib/storage.ts` and validate values read from storage. Storage may be

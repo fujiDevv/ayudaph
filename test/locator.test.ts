@@ -1,7 +1,18 @@
 import { afterEach, expect, it, vi } from "vitest";
-import { createBranchPopup, createLatestRequest, isBranches, isCoordinates, isPsgcEntries } from "@/lib/locator";
+import { createBranchPopup, createLatestRequest, isBranches, isCoordinates, isPsgcEntries, parseBranches } from "@/lib/locator";
+import fallback from "@/data/branch-fallback.json";
 
 afterEach(() => vi.unstubAllGlobals());
+
+it("provides valid, attributed fallback offices without contacting a public API", () => {
+  const branches = parseBranches(fallback);
+  expect(branches.length).toBe(44);
+  expect(isBranches(branches)).toBe(true);
+  expect(new Set(branches.map(branch => branch.id)).size).toBe(branches.length);
+  expect(fallback.license).toBe("https://opendatacommons.org/licenses/odbl/1-0/");
+  expect(fallback.attribution).toContain("OpenStreetMap contributors");
+  expect(fallback.elements.every(element => ["government", "insurance"].includes(element.tags.office))).toBe(true);
+});
 
 it("renders hostile map data exclusively as text", () => {
   const createElement = (tag: string) => ({ tag, className: "", textContent: "", children: [] as unknown[],
