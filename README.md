@@ -212,6 +212,8 @@ large-text mode adds a `large-text` class to `<html>`.
 `public/sw.js` precaches the app shell and serves it when the network is unavailable:
 
 - **Navigations** — network-first, falling back to the cached page, then `/offline`.
+- **Client navigation payloads (RSC)** — network-first with exact request and header matching;
+  previously fetched payloads work offline, while uncached routes lead to the offline page.
 - **Static assets** — stale-while-revalidate.
 - **Cross-origin requests** — never cached, so live map and agency data stays fresh.
 

@@ -14,6 +14,7 @@
       "Undergo validation by DSWD and LGU social workers using the Community-Based Monitoring System (CBMS) data.",
       "Once approved, wait for the scheduled quarterly payout announcements."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Must be 60 years old and above",
       "Frail, sickly, or with disability",
@@ -39,6 +40,7 @@
       "Upload any required supporting documents (e.g., Certificate of Separation).",
       "Wait for approval and the initial pension credit to your bank account."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5", "req-6"],
     "requirements": [
       "Must be at least 60 years old (optional) or 65 years old (technical retirement)",
       "Must be separated from employment or ceased self-employment (for optional retirement at 60)",
@@ -65,6 +67,7 @@
       "Wait for CHED/UniFAST validation and the official release of the master list of grantees.",
       "Claim the subsidy disbursement through your school or a partner financial institution."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Must be enrolled in a recognized undergraduate program",
       "Certificate of Registration/Enrollment for the current semester",
@@ -90,6 +93,7 @@
       "Submit your documentary requirements and undergo an assessment interview with a social worker.",
       "Once validated, claim your Solo Parent Identification Card (SPIC) and Certificate of Eligibility."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Must exclusively exercise sole parental care and support to the child/children without cohabitation",
       "Birth certificate(s) of dependents (coverage extended up to 22 years old if unmarried, unemployed, and in school)",
@@ -114,6 +118,7 @@
       "Wait for the preparation of the Social Case Study Report or Certificate of Eligibility.",
       "Receive the cash assistance or Guarantee Letter (GL) for hospital/funeral homes."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Valid ID of the applicant (Original and Photocopy)",
       "Barangay Certificate of Indigency or Residency",
@@ -139,6 +144,7 @@
       "Fill out the application details and upload the DOLE Certification and valid ID.",
       "Await approval and direct bank credit to your enrolled bank account."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "DOLE Certification of Involuntary Separation",
       "Notice of Termination from Employer OR Notarized Affidavit of Termination",
@@ -163,6 +169,7 @@
       "Schedule an appointment for free consultations and diagnostic testing.",
       "Avail of the prescribed medicines at the provider's in-house pharmacy for free."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3"],
     "requirements": [
       "Member Data Record (MDR) copy",
       "Registration form for PhilHealth YAKAP Provider",
@@ -186,6 +193,7 @@
       "Wait for text notification of approval.",
       "Claim cash via Pag-IBIG Loyalty Card Plus or cash card."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Completed MPL Application Form",
       "Photocopy of 2 valid government IDs",
@@ -210,6 +218,7 @@
       "For employed members: SSS advances payment to the employer, who must pay the employee. SSS reimburses the employer.",
       "For voluntary/self-employed members: SSS pays directly to the enrolled bank account."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Maternity Notification submitted prior to delivery",
       "Proof of Childbirth (Certified True Copy of Birth Certificate / Certificate of Live Birth)",
@@ -233,6 +242,7 @@
       "Sign the 4Ps Oath of Commitment, pledging compliance with health and education conditions.",
       "Receive LandBank cash cards for monthly/bi-monthly cash grant payouts."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "DSWD Listahanan poor classification (must be targeted)",
       "Pregnant women must receive pre- and post-natal care",
@@ -258,6 +268,7 @@
       "Perform assigned community work (e.g. street cleaning, minor repairs, tree planting) for 10-90 days.",
       "Claim salary payout via money remittance centers upon submission of daily time record."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "TUPAD Application Profile Sheet",
       "1 valid ID",
@@ -282,6 +293,7 @@
       "Sign the assessment sheet.",
       "Receive the Guarantee Letter (GL) which will be deducted directly from your hospital billing."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Medical Certificate or Clinical Summary",
       "Certificate of Indigency from Barangay or DSWD Social Case Study",
@@ -307,6 +319,7 @@
       "Complete post-approval requirements (e.g. transfer of title, tax declaration) within 90 days.",
       "Receive loan proceeds check or bank transfer."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5", "req-6"],
     "requirements": [
       "At least 24 monthly contributions (consecutive or lump sum)",
       "Completed Housing Loan Application Form with photos",
@@ -332,6 +345,7 @@
       "Receive notification from GSIS on calculation of pension benefits.",
       "Pension is credited directly to your GSIS eCard (UMID) account."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Completed Application Form for Retirement Benefit",
       "Declaration of Pendency/Non-Pendency of Case form",
@@ -357,6 +371,7 @@
       "Once selected, attend the scholarship orientation and sign the Scholarship Agreement.",
       "Claim tuition and allowance disbursements every semester."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Child of active OFW, or sibling of unmarried OFW",
       "Grade 12 student with General Weighted Average of at least 85%",
@@ -381,6 +396,7 @@
       "Submit medical certificates and laboratory results for review by the SSS Medical Evaluation Department.",
       "Receive daily cash reimbursement in your enrolled bank account (or via your employer)."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Completed Sickness Benefit Application online",
       "Medical Certificate (Form MM-1) signed by attending physician",
@@ -405,6 +421,7 @@
       "Fill out PhilHealth Claim Form 1 (CF-1) and Claim Form 2 (CF-2) at the hospital.",
       "The Newborn Care Package is automatically deducted from the hospital billing for both mother and child."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Active PhilHealth membership or dependent registration",
       "Completed PhilHealth Claim Form 1 (CF1)",
@@ -430,6 +447,7 @@
       "Fill out the online application and upload the Death Certificate, Funeral Receipt, and claimant ID.",
       "Wait for approval and direct credit to the enrolled claimant bank account."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Death Certificate of the deceased member (PSA copy or Certified True Copy)",
       "Official Receipt of funeral expenses naming the claimant as payor",
@@ -455,6 +473,7 @@
       "Submit official receipt of funeral expenses if the claimant is not the surviving spouse.",
       "Wait for credit to the claimant's eCard or bank account."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Completed GSIS Funeral Benefit Application Form",
       "Death Certificate of the deceased GSIS member (PSA or Certified Local Copy)",
@@ -480,6 +499,7 @@
       "Complete the designated classroom training hours and practical application.",
       "Take the National Assessment to receive the National Certificate (NC I or NC II) and toolkit/allowance."
     ],
+    "requirement_ids": ["req-1", "req-2", "req-3", "req-4", "req-5"],
     "requirements": [
       "Completed TESDA Enrollment Form",
       "Barangay Clearance or Certificate of Indigency",

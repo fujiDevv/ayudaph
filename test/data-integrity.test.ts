@@ -30,6 +30,8 @@ describe("program dataset", () => {
       expect(program.official_url).toMatch(/^https:\/\//);
       expect(program.steps.length, `${program.id} steps`).toBeGreaterThan(0);
       expect(program.requirements.length, `${program.id} requirements`).toBeGreaterThan(0);
+      expect(program.requirement_ids.length).toBe(program.requirements.length);
+      expect(new Set(program.requirement_ids).size).toBe(program.requirements.length);
       expect(program.target_audience.length, `${program.id} audience`).toBeGreaterThan(0);
       expect(program.tags.length, `${program.id} tags`).toBeGreaterThan(0);
     });
@@ -113,10 +115,21 @@ describe("hotlines", () => {
       expect(hotline.agency, "agency").toBeTruthy();
       expect(hotline.purpose, `${hotline.agency} purpose`).toBeTruthy();
       expect(hotline.numbers.length, `${hotline.agency} numbers`).toBeGreaterThan(0);
+      hotline.numbers.forEach(number => {
+        expect(number.label).toBeTruthy();
+        expect(number.dial).toMatch(/^[+*]?\d+$/);
+      });
       expect(hotline.emails.length, `${hotline.agency} emails`).toBeGreaterThan(0);
       hotline.emails.forEach((email) => expect(email).toMatch(/@/));
     });
   });
+});
+
+it("preserves hotline area codes, country codes, and shortcodes", () => {
+  const numbers = hotlines.flatMap(hotline => hotline.numbers);
+  expect(numbers.find(number => number.label === "(02) 8931-8101 to 07")?.dial).toBe("0289318101");
+  expect(numbers.find(number => number.label === "(+632) 1348")?.dial).toBe("+6321348");
+  expect(numbers.find(number => number.label === "*4363 (Mobile Shortcode)")?.dial).toBe("*4363");
 });
 
 describe("data freshness", () => {

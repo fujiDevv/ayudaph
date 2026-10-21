@@ -11,6 +11,7 @@ import {
 } from "react";
 import en from "./en.json";
 import tl from "./tl.json";
+import { readStorage, writeStorage } from "../storage";
 
 export type Locale = "en" | "tl";
 
@@ -66,7 +67,7 @@ export function I18nProvider({
 
   // Restore the visitor's saved language on mount.
   useEffect(() => {
-    const saved = window.localStorage.getItem(STORAGE_KEY);
+    const saved = readStorage(STORAGE_KEY);
     if (saved === "en" || saved === "tl") {
       setLocaleState(saved);
     }
@@ -74,7 +75,7 @@ export function I18nProvider({
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);
-    window.localStorage.setItem(STORAGE_KEY, next);
+    writeStorage(STORAGE_KEY, next);
   }, []);
 
   useEffect(() => {

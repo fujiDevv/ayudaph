@@ -23,6 +23,7 @@ import { pathways, type PathwayKey } from "@/data/pathways";
 import { getAgencyBadgeClasses } from "@/lib/agency";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { booleanRecord, readStoredJSON, writeStoredJSON } from "@/lib/storage";
 
 const PATHWAY_ICONS: Record<string, LucideIcon> = {
   Baby,
@@ -41,18 +42,13 @@ export default function PathwaysClient() {
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(PROGRESS_KEY);
-      if (raw) setCheckedItems(JSON.parse(raw) as Record<string, boolean>);
-    } catch {
-      setCheckedItems({});
-    }
+    setCheckedItems(booleanRecord(readStoredJSON(PROGRESS_KEY)));
   }, []);
 
   const toggleItem = (key: string) => {
     setCheckedItems((prev) => {
       const next = { ...prev, [key]: !prev[key] };
-      window.localStorage.setItem(PROGRESS_KEY, JSON.stringify(next));
+      writeStoredJSON(PROGRESS_KEY, next);
       return next;
     });
   };

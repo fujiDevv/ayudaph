@@ -11,19 +11,12 @@ import {
 } from "react";
 import { programs } from "@/data/constants";
 import type { Program } from "./types";
+import { readStoredJSON, writeStoredJSON } from "./storage";
+import { migrateRequirements, normalizeSavedPrograms } from "./requirements";
 
 const SAVED_KEY = "ayuda_saved";
 const CHECKED_KEY = "ayuda_checked_reqs";
 const LARGE_TEXT_KEY = "ayuda_large_text";
-
-function readJSON<T>(key: string, fallback: T): T {
-  try {
-    const raw = window.localStorage.getItem(key);
-    return raw ? (JSON.parse(raw) as T) : fallback;
-  } catch {
-    return fallback;
-  }
-}
 
 interface StoreContextValue {
   savedPrograms: string[];
@@ -54,25 +47,25 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   // Hydrate persisted state after mount so SSR markup stays stable.
   useEffect(() => {
-    setSavedPrograms(readJSON<string[]>(SAVED_KEY, []));
-    setCheckedRequirements(readJSON<Record<string, string[]>>(CHECKED_KEY, {}));
-    setIsLargeText(readJSON<boolean>(LARGE_TEXT_KEY, false));
+    setSavedPrograms(normalizeSavedPrograms(readStoredJSON(SAVED_KEY)));
+    setCheckedRequirements(migrateRequirements(readStoredJSON(CHECKED_KEY)));
+    setIsLargeText(readStoredJSON(LARGE_TEXT_KEY) === true);
     setHydrated(true);
   }, []);
 
   useEffect(() => {
     if (!hydrated) return;
-    window.localStorage.setItem(SAVED_KEY, JSON.stringify(savedPrograms));
+    writeStoredJSON(SAVED_KEY, savedPrograms);
   }, [savedPrograms, hydrated]);
 
   useEffect(() => {
     if (!hydrated) return;
-    window.localStorage.setItem(CHECKED_KEY, JSON.stringify(checkedRequirements));
+    writeStoredJSON(CHECKED_KEY, checkedRequirements);
   }, [checkedRequirements, hydrated]);
 
   useEffect(() => {
     if (!hydrated) return;
-    window.localStorage.setItem(LARGE_TEXT_KEY, JSON.stringify(isLargeText));
+    writeStoredJSON(LARGE_TEXT_KEY, isLargeText);
     document.documentElement.classList.toggle("large-text", isLargeText);
   }, [isLargeText, hydrated]);
 
@@ -88,6 +81,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const toggleRequirement = useCallback((programId: string, requirement: string) => {
+    const program = programs.find((item) => item.id === programId);
+    if (!program?.requirement_ids.includes(requirement)) return;
     setCheckedRequirements((prev) => {
       const list = prev[programId] ?? [];
       const nextList = list.includes(requirement)

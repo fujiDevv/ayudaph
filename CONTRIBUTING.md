@@ -121,6 +121,7 @@ The dataset lives in `data/programs.json`. Add or edit an entry using this schem
   "official_url": "https://www.dswd.gov.ph",
   "steps": ["First thing the applicant does", "Second step"],
   "requirements": ["Required document one", "Required document two"],
+  "requirement_ids": ["req-1", "req-2"],
   "tags": ["financial", "medical"]
 }
 ```
@@ -129,6 +130,9 @@ Field notes:
 
 - **`id`** must be unique and slug-shaped (`agency-benefit`). It is used in URLs and as the locale
   key, so it must never be renamed carelessly.
+- **`requirement_ids`** must contain one unique, permanent ID for each requirement, in matching
+  order. Keep IDs with their requirements when reordering or translating them. Assign a new ID
+  to a new requirement; never reuse a removed ID, because saved checklists refer to these IDs.
 - **`category`** may combine values with ` / `. The directory filter and the analytics charts split
   on that separator, so each part becomes its own filter option.
 - **`target_audience`** and **`tags`** power the wizard scoring and the audience/tag charts. Reuse
@@ -229,6 +233,8 @@ Tailwind v4 `@theme` tokens.
   `ayuda_guide_checked`, and the locator caches (`ayuda_branches`, `ayuda_cached_bboxes`,
   `psgc_regions`, `psgc_provinces_<code>`, `geocode_<query>`). Use a new `ayuda_`-prefixed key
   rather than repurposing one.
+- Use the helpers in `lib/storage.ts` and validate values read from storage. Storage may be
+  unavailable or full; visitors must still be able to use the interface with in-memory state.
 - **External APIs** in the locator (PSGC, Nominatim, Overpass) are rate-limited public services.
   Cache responses, keep timeouts, and never introduce a hot request loop.
 

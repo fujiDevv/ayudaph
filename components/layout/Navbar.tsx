@@ -161,31 +161,63 @@ const Navbar: FC = () => {
                   key={item.groupKey}
                   className="relative group"
                   onMouseEnter={() => handleDropdownMouseEnter(groupLabel)}
-                  onMouseLeave={handleDropdownMouseLeave}
+                  onMouseLeave={(event) => {
+                    if (!event.currentTarget.contains(document.activeElement)) {
+                      handleDropdownMouseLeave();
+                    }
+                  }}
+                  onBlur={(event) => {
+                    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                      setHoveredDropdown(null);
+                    }
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === "Escape") {
+                      setHoveredDropdown(null);
+                      event.currentTarget.querySelector("button")?.focus();
+                    }
+                  }}
                 >
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "flex items-center font-medium transition-colors pb-1 border-b-2 whitespace-nowrap",
-                      isActive
-                        ? "text-primary-600 border-primary-600"
-                        : "text-gray-700 hover:text-primary-600 border-transparent",
-                    )}
-                  >
-                    <span className="lg:text-sm xl:text-base">{groupLabel}</span>
+                  <div className="flex items-center">
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "flex items-center font-medium transition-colors pb-1 border-b-2 whitespace-nowrap",
+                        isActive
+                          ? "text-primary-600 border-primary-600"
+                          : "text-gray-700 hover:text-primary-600 border-transparent",
+                      )}
+                    >
+                      <span className="lg:text-sm xl:text-base">{groupLabel}</span>
+                    </Link>
                     {item.children && (
-                      <ChevronDownIcon
-                        className={cn(
-                          "ml-1 h-4 w-4 shrink-0 transition-colors",
-                          isActive
-                            ? "text-primary-600"
-                            : "text-gray-800 group-hover:text-primary-600",
-                        )}
-                      />
+                      <button
+                        type="button"
+                        aria-label={`Toggle ${groupLabel} submenu`}
+                        aria-expanded={hoveredDropdown === groupLabel}
+                        aria-controls={`desktop-${item.groupKey}`}
+                        onClick={() => {
+                          if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+                          setHoveredDropdown((current) =>
+                            current === groupLabel ? null : groupLabel,
+                          );
+                        }}
+                        className="p-1 rounded focus-visible:outline-2 focus-visible:outline-primary-600"
+                      >
+                        <ChevronDownIcon
+                          className={cn(
+                            "ml-1 h-4 w-4 shrink-0 transition-colors",
+                            isActive
+                              ? "text-primary-600"
+                              : "text-gray-800 group-hover:text-primary-600",
+                          )}
+                        />
+                      </button>
                     )}
-                  </Link>
+                  </div>
                   {item.children && (
                     <div
+                      id={`desktop-${item.groupKey}`}
                       className={cn(
                         "absolute left-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black/5 transition-[opacity] duration-200 z-50 pt-2",
                         hoveredDropdown === groupLabel
@@ -193,20 +225,20 @@ const Navbar: FC = () => {
                           : "opacity-0 invisible pointer-events-none",
                       )}
                     >
-                      <div className="py-1" role="menu" aria-orientation="vertical">
+                      <div className="py-1">
                         {item.children.map((child) => {
                           const childActive = isActiveRoute(child.href);
                           return (
                             <Link
                               key={child.href}
                               href={child.href}
+                              onClick={() => setHoveredDropdown(null)}
                               className={cn(
                                 "text-left block px-4 py-2 text-sm",
                                 childActive
                                   ? "bg-primary-500 text-primary-50 hover:bg-primary-500 hover:text-primary-50"
                                   : "text-gray-700 hover:bg-primary-50 hover:text-primary-600",
                               )}
-                              role="menuitem"
                             >
                               {t(`nav.${child.labelKey}`)}
                             </Link>

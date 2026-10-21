@@ -9,12 +9,13 @@ export interface Program {
   official_url: string;
   steps: string[];
   requirements: string[];
+  requirement_ids: string[];
   tags: string[];
 }
 
 export interface Hotline {
   agency: string;
-  numbers: string[];
+  numbers: { label: string; dial: string }[];
   purpose: string;
   emails: string[];
 }

@@ -22,6 +22,7 @@ const sample: Program[] = [
     official_url: "",
     steps: [],
     requirements: [],
+    requirement_ids: [],
     tags: ["financial", "medical"],
   },
   {
@@ -35,6 +36,7 @@ const sample: Program[] = [
     official_url: "",
     steps: [],
     requirements: [],
+    requirement_ids: [],
     tags: ["financial"],
   },
 ];

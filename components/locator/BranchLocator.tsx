@@ -7,20 +7,16 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import PageHeader from "@/components/ui/PageHeader";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-
-interface Branch {
-  id: string;
-  agency: string;
-  name: string;
-  lat: number;
-  lng: number;
-  address: string;
-}
-
-interface PsgcEntry {
-  code: string;
-  name: string;
-}
+import {
+  createBranchPopup,
+  createLatestRequest,
+  isBranches,
+  isCoordinates,
+  isPsgcEntries,
+  type Branch,
+  type PsgcEntry,
+} from "@/lib/locator";
+import { readStoredJSON, removeStorage, writeStoredJSON } from "@/lib/storage";
 
 const AGENCY_FILTERS = [
   "All Agencies",
@@ -90,6 +86,14 @@ export default function BranchLocator() {
   const branchesRef = useRef<Branch[]>([]);
   const cachedBboxesRef = useRef<Set<string>>(new Set());
 
+  const regionRequest = useRef(createLatestRequest());
+  const locationRequest = useRef(createLatestRequest());
+
+  useEffect(() => () => {
+    regionRequest.current.cancel();
+    locationRequest.current.cancel();
+  }, []);
+
   const [ready, setReady] = useState(false);
   const [agency, setAgency] = useState("All Agencies");
   const [regions, setRegions] = useState<PsgcEntry[]>([]);
@@ -141,15 +145,7 @@ export default function BranchLocator() {
           icon: createIcon(branch.agency),
         }).addTo(map);
         const style = AGENCY_STYLES[branch.agency] ?? AGENCY_STYLES.Other;
-        marker.bindPopup(`
-          <div class="font-sans min-w-[200px] p-0.5">
-            <h3 class="font-bold text-gray-900 text-[15px] leading-tight">${branch.name}</h3>
-            <p class="text-[11px] text-gray-500 mt-1.5 leading-relaxed">${branch.address}</p>
-            <div class="mt-2.5 text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full inline-block text-white ${style.bg}">
-              ${branch.agency}
-            </div>
-          </div>
-        `);
+        marker.bindPopup(createBranchPopup(branch, style.bg));
         markersRef.current.push(marker);
       });
     },
@@ -167,7 +163,7 @@ export default function BranchLocator() {
 
     if (branchesRef.current.length === 0 && cachedBboxesRef.current.size > 0) {
       cachedBboxesRef.current.clear();
-      window.localStorage.removeItem(BBOXES_KEY);
+      removeStorage(BBOXES_KEY);
     }
 
     const bounds = map.getBounds();
@@ -251,17 +247,11 @@ export default function BranchLocator() {
       if (unique.length > 0) {
         branchesRef.current = [...branchesRef.current, ...unique];
         setBranchCount(branchesRef.current.length);
-        window.localStorage.setItem(
-          BRANCHES_KEY,
-          JSON.stringify(branchesRef.current),
-        );
+        writeStoredJSON(BRANCHES_KEY, branchesRef.current);
       }
 
       cachedBboxesRef.current.add(cacheKey);
-      window.localStorage.setItem(
-        BBOXES_KEY,
-        JSON.stringify(Array.from(cachedBboxesRef.current)),
-      );
+      writeStoredJSON(BBOXES_KEY, Array.from(cachedBboxesRef.current));
       renderMarkers(agency);
     } catch (err) {
       console.error(err);
@@ -307,21 +297,15 @@ export default function BranchLocator() {
   // Restore cached branches/bboxes and run an initial search.
   useEffect(() => {
     if (!ready) return;
-    try {
-      const rawBranches = window.localStorage.getItem(BRANCHES_KEY);
-      if (rawBranches) {
-        const parsed = JSON.parse(rawBranches) as Branch[];
-        branchesRef.current = parsed;
-        setBranchCount(parsed.length);
-      }
-      const rawBboxes = window.localStorage.getItem(BBOXES_KEY);
-      if (rawBboxes) {
-        (JSON.parse(rawBboxes) as string[]).forEach((key) =>
-          cachedBboxesRef.current.add(key),
-        );
-      }
-    } catch {
-      /* ignore malformed cache */
+    const cachedBranches = readStoredJSON(BRANCHES_KEY);
+    if (isBranches(cachedBranches)) {
+      branchesRef.current = cachedBranches;
+      setBranchCount(cachedBranches.length);
+    }
+    const cachedBboxes = readStoredJSON(BBOXES_KEY);
+    if (Array.isArray(cachedBboxes)) {
+      cachedBboxes.filter((key): key is string => typeof key === "string")
+        .forEach(key => cachedBboxesRef.current.add(key));
     }
     searchArea();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -334,66 +318,73 @@ export default function BranchLocator() {
 
   // Load PSGC regions once, caching in localStorage.
   useEffect(() => {
-    const cached = window.localStorage.getItem("psgc_regions");
-    if (cached) {
-      try {
-        setRegions(JSON.parse(cached) as PsgcEntry[]);
-        return;
-      } catch {
-        /* fall through to network */
-      }
+    const cached = readStoredJSON("psgc_regions");
+    if (isPsgcEntries(cached)) {
+      setRegions(cached);
+      return;
     }
     fetch("https://psgc.gitlab.io/api/regions")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch regions");
+        return res.json();
+      })
       .then((data: PsgcEntry[]) => {
+        if (!isPsgcEntries(data)) throw new Error("Invalid regions");
         const sorted = [...data].sort((a, b) => a.name.localeCompare(b.name));
         setRegions(sorted);
-        window.localStorage.setItem("psgc_regions", JSON.stringify(sorted));
+        writeStoredJSON("psgc_regions", sorted);
       })
       .catch((err) => console.error("Failed to fetch regions", err));
   }, []);
 
   const onRegionChange = async (code: string) => {
+    const request = regionRequest.current.start();
+    locationRequest.current.cancel();
+    setLoading(false);
+    setError("");
     setRegionCode(code);
     setProvinceCode("");
     setProvinces([]);
     if (!code) return;
 
     const cacheKey = `psgc_provinces_${code}`;
-    const cached = window.localStorage.getItem(cacheKey);
-    if (cached) {
-      try {
-        setProvinces(JSON.parse(cached) as PsgcEntry[]);
-        return;
-      } catch {
-        /* fall through */
-      }
+    const cached = readStoredJSON(cacheKey);
+    if (isPsgcEntries(cached)) {
+      setProvinces(cached);
+      setLoading(false);
+      return;
     }
 
     setLoading(true);
     try {
       const [provRes, cityRes] = await Promise.all([
-        fetch(`https://psgc.gitlab.io/api/regions/${code}/provinces`),
-        fetch(`https://psgc.gitlab.io/api/regions/${code}/cities`),
+        fetch(`https://psgc.gitlab.io/api/regions/${code}/provinces`, { signal: request.signal }),
+        fetch(`https://psgc.gitlab.io/api/regions/${code}/cities`, { signal: request.signal }),
       ]);
       const provData: PsgcEntry[] = provRes.ok ? await provRes.json() : [];
       const cityData: PsgcEntry[] = cityRes.ok ? await cityRes.json() : [];
+      if (!request.isCurrent()) return;
+      if (!isPsgcEntries(provData) || !isPsgcEntries(cityData)) throw new Error("Invalid locations");
       const combined = [...provData, ...cityData].sort((a, b) =>
         a.name.localeCompare(b.name),
       );
       setProvinces(combined);
-      window.localStorage.setItem(cacheKey, JSON.stringify(combined));
-    } catch (err) {
-      console.error("Failed to fetch provinces", err);
+      writeStoredJSON(cacheKey, combined);
+    } catch {
+      if (request.isCurrent()) setError("Failed to load locations. Please try again.");
     } finally {
-      setLoading(false);
+      if (request.isCurrent()) setLoading(false);
     }
   };
 
   const onProvinceChange = async (code: string) => {
+    const request = locationRequest.current.start();
     setProvinceCode(code);
     const map = mapRef.current;
-    if (!code || !map) return;
+    if (!code || !map) {
+      setLoading(false);
+      return;
+    }
 
     setLoading(true);
     setError("");
@@ -407,38 +398,36 @@ export default function BranchLocator() {
 
     const query = `${province.name}, ${region.name}, Philippines`;
     const cacheKey = `geocode_${query.replace(/\s+/g, "_")}`;
-    const cached = window.localStorage.getItem(cacheKey);
-    if (cached) {
-      try {
-        const coords = JSON.parse(cached) as { lat: number; lng: number };
-        map.setView([coords.lat, coords.lng], 13);
-        await searchArea();
-        setLoading(false);
-        return;
-      } catch {
-        /* fall through */
-      }
+    const cached = readStoredJSON(cacheKey);
+    if (isCoordinates(cached)) {
+      map.setView([cached.lat, cached.lng], 13);
+      await searchArea();
+      if (request.isCurrent()) setLoading(false);
+      return;
     }
 
     try {
       const res = await fetch(
         `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1`,
+        { signal: request.signal },
       );
+      if (!res.ok) throw new Error("Geocoding failed");
       const data: { lat: string; lon: string }[] = await res.json();
+      if (!request.isCurrent()) return;
       if (data.length > 0) {
         const lat = parseFloat(data[0].lat);
         const lng = parseFloat(data[0].lon);
+        if (!isCoordinates({ lat, lng })) throw new Error("Invalid coordinates");
         map.setView([lat, lng], 13);
-        window.localStorage.setItem(cacheKey, JSON.stringify({ lat, lng }));
+        writeStoredJSON(cacheKey, { lat, lng });
         await searchArea();
       } else {
         setError("Could not find coordinates for this location.");
       }
-    } catch (err) {
-      console.error("Geocoding error", err);
-      setError("Failed to locate province on map.");
+    } catch {
+      if (request.isCurrent()) setError("Failed to locate province on map.");
     } finally {
-      setLoading(false);
+      if (request.isCurrent()) setLoading(false);
     }
   };
 

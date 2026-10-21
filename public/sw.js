@@ -1,5 +1,5 @@
 /* Ayuda service worker — app-shell precache + runtime caching. */
-const VERSION = "ayuda-v1";
+const VERSION = "ayuda-v2";
 const PRECACHE = `${VERSION}-precache`;
 const RUNTIME = `${VERSION}-runtime`;
 const OFFLINE_URL = "/offline";
@@ -42,7 +42,7 @@ self.addEventListener("activate", (event) => {
       const keys = await caches.keys();
       await Promise.all(
         keys
-          .filter((key) => key !== PRECACHE && key !== RUNTIME)
+          .filter((key) => key.startsWith("ayuda-") && key !== PRECACHE && key !== RUNTIME)
           .map((key) => caches.delete(key)),
       );
       await self.clients.claim();
@@ -60,18 +60,34 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  // Navigations: network first, fall back to the cached page, then /offline.
-  if (request.mode === "navigate") {
+  // RSC requests have an empty destination. Keep their exact URLs and Vary
+  // headers: a prefetch shell must never substitute for a navigation payload.
+  const isRsc = request.headers.get("RSC") === "1" ||
+    url.pathname.endsWith(".rsc") || url.searchParams.has("_rsc");
+
+  const remember = async (response) => {
+    if (response.ok && response.type === "basic" &&
+        (!isRsc || response.headers.get("content-type")?.startsWith("text/x-component"))) {
+      try {
+        const cache = await caches.open(RUNTIME);
+        await cache.put(request, response.clone());
+      } catch { /* a full cache must not turn a successful request into an error */ }
+    }
+  };
+
+  if (request.mode === "navigate" || isRsc) {
     event.respondWith(
       (async () => {
         try {
           const response = await fetch(request);
-          const cache = await caches.open(RUNTIME);
-          cache.put(request, response.clone());
+          if (!response.ok && response.status >= 500) throw new Error("Server unavailable");
+          await remember(response);
           return response;
         } catch {
-          const cached = (await caches.match(request)) || (await caches.match("/"));
+          const cached = await caches.match(request);
           if (cached) return cached;
+          // An HTML response to RSC makes vinext perform a document navigation.
+          // Returning the cached offline page preserves its /offline response URL.
           return (await caches.match(OFFLINE_URL)) || Response.error();
         }
       })(),
@@ -81,20 +97,12 @@ self.addEventListener("fetch", (event) => {
 
   if (!CACHEABLE_DESTINATIONS.has(request.destination)) return;
 
-  // Static assets: stale-while-revalidate.
+  // Extend the event lifetime even when a cached asset is returned immediately.
+  const network = fetch(request)
+    .then(async response => { await remember(response); return response; })
+    .catch(() => undefined);
+  event.waitUntil(network);
   event.respondWith(
-    (async () => {
-      const cached = await caches.match(request);
-      const network = fetch(request)
-        .then(async (response) => {
-          if (response && response.status === 200 && response.type === "basic") {
-            const cache = await caches.open(RUNTIME);
-            cache.put(request, response.clone());
-          }
-          return response;
-        })
-        .catch(() => cached);
-      return cached || network;
-    })(),
+    (async () => (await caches.match(request)) || (await network) || Response.error())(),
   );
 });

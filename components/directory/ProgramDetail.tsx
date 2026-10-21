@@ -196,10 +196,11 @@ const ProgramDetail: FC<ProgramDetailProps> = ({ programId }) => {
           </div>
 
           <ul className="space-y-2">
-            {requirements.map((requirement) => {
-              const checked = isRequirementChecked(program.id, requirement);
+            {requirements.map((requirement, index) => {
+              const requirementId = program.requirement_ids[index];
+              const checked = isRequirementChecked(program.id, requirementId);
               return (
-                <li key={requirement}>
+                <li key={requirementId}>
                   <label
                     className={cn(
                       "flex items-start gap-3 rounded-md border p-3 cursor-pointer transition-colors",
@@ -212,7 +213,7 @@ const ProgramDetail: FC<ProgramDetailProps> = ({ programId }) => {
                       type="checkbox"
                       checked={checked}
                       onChange={() =>
-                        toggleRequirement(program.id, requirement)
+                        toggleRequirement(program.id, requirementId)
                       }
                       className="mt-0.5 h-4 w-4 shrink-0 accent-primary-500"
                     />

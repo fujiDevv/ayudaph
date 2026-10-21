@@ -17,6 +17,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import { guides, type GuideKey } from "@/data/guides";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { booleanRecord, readStoredJSON, writeStoredJSON } from "@/lib/storage";
 import { buildLetterHTML, type DocType, type LetterForm } from "./letterTemplates";
 
 type Tab = "generator" | "guides";
@@ -126,18 +127,13 @@ export default function AssistanceClient() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(GUIDES_CHECKED_KEY);
-      if (raw) setChecked(JSON.parse(raw) as Record<string, boolean>);
-    } catch {
-      setChecked({});
-    }
+    setChecked(booleanRecord(readStoredJSON(GUIDES_CHECKED_KEY)));
   }, []);
 
   const toggleChecked = (id: string) => {
     setChecked((prev) => {
       const next = { ...prev, [id]: !prev[id] };
-      window.localStorage.setItem(GUIDES_CHECKED_KEY, JSON.stringify(next));
+      writeStoredJSON(GUIDES_CHECKED_KEY, next);
       return next;
     });
   };

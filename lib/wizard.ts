@@ -14,9 +14,9 @@ export const MIN_RECOMMENDATION_SCORE = 2;
 
 function audienceMatches(values: string[], candidate: string): boolean {
   const lower = candidate.toLowerCase();
-  return values.some(
-    (value) =>
-      value.toLowerCase().includes(lower) || lower.includes(value.toLowerCase()),
+  const aliases: Record<string, string[]> = { ofw: ["ofw", "ofws"] };
+  return values.some((value) =>
+    (aliases[lower] ?? [lower]).includes(value.toLowerCase()),
   );
 }
 
@@ -24,6 +24,15 @@ function audienceMatches(values: string[], candidate: string): boolean {
 export function scoreProgram(program: Program, answers: WizardAnswers): number {
   let score = 0;
   const statusLower = answers.status.toLowerCase();
+
+  // SSS unemployment requires involuntary separation. Other programs may list
+  // unemployment alongside independent audiences, so do not exclude those.
+  if (
+    program.id === "sss-unemp" &&
+    ["Employed", "Government Employees"].includes(answers.status)
+  ) {
+    return 0;
+  }
 
   const matchStatus =
     audienceMatches(program.target_audience, answers.status) ||

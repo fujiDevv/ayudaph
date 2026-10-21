@@ -5,15 +5,6 @@ import PageHeader from "@/components/ui/PageHeader";
 import { hotlines } from "@/data/constants";
 import { useI18n } from "@/lib/i18n";
 
-function getDialableNumber(text: string) {
-  let clean = text.split(/\s+(?:to|or)\s+/i)[0].trim();
-  clean = clean
-    .replace(/^(Smart|Globe|Toll-Free|Hotline|Toll-Free Hotline)[:\s-]+\s*/i, "")
-    .trim();
-  clean = clean.replace(/\(.*?\)/g, "").trim();
-  return clean.replace(/[^\d+*]/g, "");
-}
-
 export default function HotlinesList() {
   const { t } = useI18n();
 
@@ -48,11 +39,11 @@ export default function HotlinesList() {
                   <div className="flex flex-col gap-1.5 grow">
                     {contact.numbers.map((phone) => (
                       <a
-                        key={phone}
-                        href={`tel:${getDialableNumber(phone)}`}
+                        key={phone.dial}
+                        href={`tel:${phone.dial}`}
                         className="text-primary-600 hover:underline break-all leading-normal"
                       >
-                        {phone}
+                        {phone.label}
                       </a>
                     ))}
                   </div>

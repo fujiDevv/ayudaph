@@ -9,7 +9,7 @@ import { useI18n } from "@/lib/i18n";
 const quickDials = hotlines
   .map((hotline) => ({
     agency: hotline.agency.split(" (")[0],
-    number: hotline.numbers[0],
+    number: hotline.numbers[0]?.label,
   }))
   .filter((entry) => entry.number);
 

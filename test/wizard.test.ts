@@ -24,6 +24,7 @@ function makeProgram(overrides: Partial<Program> = {}): Program {
     official_url: "https://example.gov.ph",
     steps: [],
     requirements: [],
+    requirement_ids: [],
     tags: [],
     ...overrides,
   };
@@ -37,6 +38,22 @@ const neutral: WizardAnswers = {
 };
 
 describe("scoreProgram", () => {
+  it("does not confuse employed, unemployed, and self-employed audiences", () => {
+    const answers = { ...neutral, status: "Unemployed" };
+    for (const audience of ["Employed", "Self-Employed", "Underemployed"]) {
+      expect(scoreProgram(makeProgram({ target_audience: [audience] }), answers)).toBe(0);
+    }
+    expect(scoreProgram(makeProgram({ target_audience: ["OFWs"] }), { ...neutral, status: "OFW" })).toBe(4);
+  });
+
+  it("excludes unemployment benefits for currently employed applicants", () => {
+    for (const status of ["Employed", "Government Employees"]) {
+      const results = recommendPrograms(programs, { status, need: "financial", demographics: [] });
+      expect(results.some(program => program.id === "sss-unemp")).toBe(false);
+    }
+    expect(recommendPrograms(programs, { status: "Unemployed", need: "financial", demographics: [] })
+      .some(program => program.id === "sss-unemp")).toBe(true);
+  });
   it("awards 4 points when an audience matches the status", () => {
     const program = makeProgram({ target_audience: ["Employed"] });
     expect(scoreProgram(program, { ...neutral, status: "Employed" })).toBe(4);

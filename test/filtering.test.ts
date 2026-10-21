@@ -20,6 +20,7 @@ const sample: Program[] = [
     official_url: "https://www.dswd.gov.ph",
     steps: ["Wait for assessment"],
     requirements: ["Listahanan classification"],
+    requirement_ids: [],
     tags: ["financial", "education"],
   },
   {
@@ -33,6 +34,7 @@ const sample: Program[] = [
     official_url: "https://www.sss.gov.ph",
     steps: ["File online"],
     requirements: ["120 contributions"],
+    requirement_ids: [],
     tags: ["pension", "retirement"],
   },
 ];
