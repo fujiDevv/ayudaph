@@ -23,6 +23,7 @@ const Navbar: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [hoveredDropdown, setHoveredDropdown] = useState<string | null>(null);
+  const [dismissedDropdown, setDismissedDropdown] = useState<string | null>(null);
   const { t, locale, setLocale } = useI18n();
   const { savedPrograms, isLargeText, toggleLargeText } = useStore();
   const pathname = usePathname();
@@ -66,6 +67,7 @@ const Navbar: FC = () => {
       clearTimeout(closeTimeoutRef.current);
       closeTimeoutRef.current = null;
     }
+    setDismissedDropdown(null);
     setHoveredDropdown(label);
   };
 
@@ -77,7 +79,7 @@ const Navbar: FC = () => {
   };
 
   return (
-    <nav className="bg-white shadow-xs sticky top-0 z-50 overflow-x-clip print:hidden">
+    <nav className="bg-white shadow-xs sticky top-0 z-50 overflow-x-clip lg:overflow-visible print:hidden">
       {/* Top utility bar */}
       <div className="border-b border-gray-200">
         <div className="container mx-auto px-4 flex justify-center md:justify-end">
@@ -159,9 +161,10 @@ const Navbar: FC = () => {
               return (
                 <div
                   key={item.groupKey}
-                  className="relative group"
+                  className="relative group/nav"
                   onMouseEnter={() => handleDropdownMouseEnter(groupLabel)}
                   onMouseLeave={(event) => {
+                    setDismissedDropdown(null);
                     if (!event.currentTarget.contains(document.activeElement)) {
                       handleDropdownMouseLeave();
                     }
@@ -173,6 +176,7 @@ const Navbar: FC = () => {
                   }}
                   onKeyDown={(event) => {
                     if (event.key === "Escape") {
+                      setDismissedDropdown(groupLabel);
                       setHoveredDropdown(null);
                       event.currentTarget.querySelector("button")?.focus();
                     }
@@ -198,6 +202,9 @@ const Navbar: FC = () => {
                         aria-controls={`desktop-${item.groupKey}`}
                         onClick={() => {
                           if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+                          setDismissedDropdown(
+                            hoveredDropdown === groupLabel ? groupLabel : null,
+                          );
                           setHoveredDropdown((current) =>
                             current === groupLabel ? null : groupLabel,
                           );
@@ -209,7 +216,7 @@ const Navbar: FC = () => {
                             "ml-1 h-4 w-4 shrink-0 transition-colors",
                             isActive
                               ? "text-primary-600"
-                              : "text-gray-800 group-hover:text-primary-600",
+                              : "text-gray-800 group-hover/nav:text-primary-600",
                           )}
                         />
                       </button>
@@ -219,20 +226,25 @@ const Navbar: FC = () => {
                     <div
                       id={`desktop-${item.groupKey}`}
                       className={cn(
-                        "absolute left-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black/5 transition-[opacity] duration-200 z-50 pt-2",
+                        "absolute top-full left-0 w-56 pt-2 z-50 transition-opacity duration-150",
+                        dismissedDropdown !== groupLabel &&
+                          "group-hover/nav:opacity-100 group-hover/nav:visible group-hover/nav:pointer-events-auto",
                         hoveredDropdown === groupLabel
                           ? "opacity-100 visible pointer-events-auto"
                           : "opacity-0 invisible pointer-events-none",
                       )}
                     >
-                      <div className="py-1">
+                      <div className="rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5">
                         {item.children.map((child) => {
                           const childActive = isActiveRoute(child.href);
                           return (
                             <Link
                               key={child.href}
                               href={child.href}
-                              onClick={() => setHoveredDropdown(null)}
+                              onClick={() => {
+                                setDismissedDropdown(groupLabel);
+                                setHoveredDropdown(null);
+                              }}
                               className={cn(
                                 "text-left block px-4 py-2 text-sm",
                                 childActive
