@@ -26,7 +26,7 @@
     "lucide-react": "^1.47.0",
     "react": "latest",
     "react-dom": "latest",
-    "react-server-dom-webpack": "^19.3.0",
+    "react-server-dom-webpack": "^19.3.1",
     "tailwind-merge": "^3.7.0",
     "vinext": "1.0.0-beta.10"
   },
